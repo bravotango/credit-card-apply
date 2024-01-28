@@ -1,0 +1,28 @@
+{
+  "shared": {
+    "button": {
+      "goBack": "Back",
+      "next": "Next"
+    }
+  },
+  "getStartedView": {
+    "heading": "See if you're pre-approved for card offers—with no harm to your credit",
+    "buttonText": "Get started"
+  },
+  "legalNameView": {
+    "heading": "What's your legal name?",
+    "subHeading": "We need your legal name to verify your identity.",
+    "labels": {
+      "firstName": "Legal first name",
+      "middleInitial": "MI",
+      "lastName": "Legal last name"
+    },
+    "validation": {
+      "firstName": "Please enter a valid first name (letters only)"
+    }
+  },
+  "addressView": {
+    "heading": "Nice to meet you, {name}. Let us know where you live so we can verify your identity.",
+    "subHeading": "You can add a mailing address later so we know where to send your card."
+  }
+}

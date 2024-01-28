@@ -1,1 +1,231 @@
+:root {
+  --primary-bg-color: #000;
+  --primary-text-color: #fff;
+  --px-small: 8px;
+  --px-large: 20px;
+  --border-radius: 4px;
+  --input-width: 260px;
+  --input-width-small: 60px;
+  --input-height: 40px;
+  --button-width: 260px;
+  --button-height: 40px;
+  --focus-height: 600px;
+  --font-size-small: 0.75rem;
+  --font-size-medium: 1.15rem;
+  --font-size-large: 1.75rem;
+}
 
+//CSS reset - start
+
+/***
+    The new CSS reset - version 1.8.5 (last updated 14.6.2023)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+
+/*
+    Remove all the styles of the "User-Agent-Stylesheets", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+    - The "html" attribute is excluded, because otherwise a bug in Chrome breaks the CSS hyphens property (https://github.com/elad2412/the-new-css-reset/issues/36)
+ */
+*:where(
+    :not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)
+  ) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a,
+button {
+  cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol,
+ul,
+menu {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-inline-size: 100%;
+  max-block-size: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input,
+textarea {
+  -webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+  -webkit-appearance: revert;
+  appearance: revert;
+}
+
+/* preformatted text - use only for this feature */
+:where(pre) {
+  all: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+  color: unset;
+}
+
+/* remove default dot (•) sign */
+::marker {
+  content: initial;
+}
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+  display: none;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly.
+   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element */
+:where([contenteditable]:not([contenteditable='false'])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  -webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable='true']) {
+  -webkit-user-drag: element;
+}
+
+/* Revert Modal native behavior */
+:where(dialog:modal) {
+  all: revert;
+}
+//CSS reset - end
+
+body {
+  display: flex;
+  flex-direction: column;
+  .button-container {
+    text-align: center;
+    margin-top: var(
+      --px-small
+    ); // Add some top margin to separate the button from the inputs
+  }
+  .button,
+  button {
+    border: 1px solid var(--primary-text-color);
+    border-radius: var(--border-radius);
+    margin: var(--px-large) auto;
+    text-align: center;
+    min-width: var(--button-width);
+    padding: var(--px-small);
+    background-color: var(--primary-bg-color);
+    color: var(--primary-text-color);
+  }
+  .logo {
+    margin: var(--px-small) 0;
+    padding: 0 var(--px-small);
+  }
+
+  .banner {
+    background-color: var(--primary-bg-color);
+    color: var(--primary-text-color);
+    h1 {
+      font-size: var(--font-size-large);
+      text-align: center;
+    }
+    h2 {
+      font-size: var(--font-size-medium);
+      text-align: center;
+    }
+
+    form {
+      margin: var(--px-large) 0;
+      .fields {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: var(--px-small);
+        label {
+          font-size: var(--font-size-small);
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+        input {
+          color: #000;
+          background-color: var(--primary-text-color);
+          height: var(--input-height);
+          padding: var(--px-small);
+          border-radius: var(--border-radius);
+          &.small {
+            width: var(--input-width-small);
+          }
+        }
+      }
+    }
+  }
+  .container {
+    width: 800px;
+    padding: 0 var(--px-small);
+    margin: var(--px-small) auto;
+    align-items: center;
+  }
+  .stack {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 400px;
+  }
+  .code-container {
+    white-space: pre-wrap;
+    background-color: #f7f7f7;
+    padding: var(--px-large);
+    border-radius: var(--border-radius);
+    margin-bottom: var(--px-large);
+    font-family: 'Courier New', monospace;
+  }
+
+  @media screen and (max-width: 800px) {
+    .container {
+      max-width: 90%;
+      min-width: 380px;
+    }
+    .banner form .fields {
+      width: 90%;
+      display: block;
+      padding-left: var(--px-large);
+      input {
+        width: 100%;
+        &.small {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
