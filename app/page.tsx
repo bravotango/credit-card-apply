@@ -1,6 +1,18 @@
-import Image from 'next/image';
-import styles from './page.module.css';
+import React from 'react';
+import strings from './strings.json';
+import Link from 'next/link';
 
-export default function Home() {
-  return <main className={styles.main}>hello my beautiful world</main>;
-}
+const page = () => {
+  return (
+    <div className='banner'>
+      <main className='container stack'>
+        <h1>{strings.getStartedView.heading}</h1>
+        <Link href='./apply' className='button'>
+          {strings.getStartedView.buttonText}
+        </Link>
+      </main>
+    </div>
+  );
+};
+
+export default page;
