@@ -1,7 +1,7 @@
 import React from 'react';
 import { useGlobalContext } from '../Context/store';
 
-const Payload = () => {
+const GlobalState = () => {
   const { payload, wizard } = useGlobalContext();
   return (
     <>
@@ -15,4 +15,4 @@ const Payload = () => {
   );
 };
 
-export default Payload;
+export default GlobalState;
