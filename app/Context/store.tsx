@@ -8,17 +8,14 @@ import React, {
   useState,
   ReactNode,
 } from 'react';
-import { Payload } from '../models';
+
+import { Payload, StepState, Wizard, WizardSteps } from '../models';
 
 interface ContextProps {
-  payload: {
-    legalName: {
-      firstName: string;
-      middleInitial: string;
-      lastName: string;
-    };
-  };
+  payload: Payload;
   setPayload: Dispatch<SetStateAction<Payload>>;
+  wizard: Wizard;
+  setWizard: Dispatch<SetStateAction<Wizard>>;
 }
 
 const GlobalContext = createContext<ContextProps | undefined>(undefined);
@@ -37,10 +34,23 @@ export const GlobalContextProvider: React.FC<GlobalContextProviderProps> = ({
       middleInitial: '',
     },
   };
+  const initWizard: Wizard = {
+    steps: [
+      { state: StepState.NotStarted, title: WizardSteps.LegalName },
+      { state: StepState.NotStarted, title: WizardSteps.Address },
+      { state: StepState.NotStarted, title: WizardSteps.DateOfBirth },
+      { state: StepState.NotStarted, title: WizardSteps.ReviewAndSubmit },
+    ],
+    isComplete: false,
+    isCloseModalOpen: false,
+    currentStep: WizardSteps.LegalName,
+  };
+
   const [payload, setPayload] = useState<Payload>(initPayload);
+  const [wizard, setWizard] = useState<Wizard>(initWizard);
 
   return (
-    <GlobalContext.Provider value={{ payload, setPayload }}>
+    <GlobalContext.Provider value={{ payload, setPayload, wizard, setWizard }}>
       {children}
     </GlobalContext.Provider>
   );
