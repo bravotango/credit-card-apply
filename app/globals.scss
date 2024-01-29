@@ -164,6 +164,8 @@ body {
 
     form {
       margin: var(--px-large) 0;
+      display: flex;
+      flex-direction: column;
       .fields {
         display: flex;
         flex-direction: row;
@@ -183,7 +185,7 @@ body {
           padding: var(--px-small);
           border-radius: var(--border-radius);
           &.small {
-            width: var(--input-width-small);
+            max-width: var(--input-width-small);
           }
         }
       }
@@ -216,14 +218,15 @@ body {
       max-width: 90%;
       min-width: 380px;
     }
-    .banner form .fields {
-      width: 90%;
-      display: block;
-      padding-left: var(--px-large);
-      input {
-        width: 100%;
-        &.small {
+    .banner {
+      padding: 0 var(--px-large);
+      form .fields {
+        display: block;
+        input {
           width: 100%;
+          &.small {
+            width: 100%;
+          }
         }
       }
     }

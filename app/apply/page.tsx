@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import strings from '../strings.json';
 import Payload from '../components/Payload';
 import { useGlobalContext } from '../Context/store';
+import './styles.css';
 
 const Page = () => {
   const { setPayload } = useGlobalContext();
@@ -31,7 +32,7 @@ const Page = () => {
           <h2>{strings.legalNameView.subHeading}</h2>
           <form onSubmit={handleOnSubmit}>
             <div className='fields'>
-              <label>
+              <label className='a'>
                 {strings.legalNameView.labels.firstName}
                 <input
                   required
@@ -42,11 +43,12 @@ const Page = () => {
                   onChange={(e) => setLegalFirstName(e.target.value)}
                 />
               </label>
-              <label>
+              <label className='b'>
                 {strings.legalNameView.labels.middleInitial}
                 <input
                   className='small'
                   maxLength={2}
+                  pattern='[A-Za-z]{1,}'
                   type='text'
                   value={middleInitial}
                   onChange={(e) => {
@@ -54,11 +56,12 @@ const Page = () => {
                   }}
                 />
               </label>
-              <label>
+              <label className='c'>
                 {strings.legalNameView.labels.lastName}
                 <input
                   required
                   type='text'
+                  pattern='[A-Za-z]{1,}'
                   value={legalLastName}
                   onChange={(e) => {
                     setLegalLastName(e.target.value);
