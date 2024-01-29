@@ -1,10 +1,11 @@
 body {
   .banner {
     form {
-      .fields {
+      .legalName {
         display: grid;
         grid-template-areas: 'a a a a a b c c c c c';
-
+        justify-content: space-between;
+        gap: var(--px-small);
         .a {
           grid-area: a;
         }
@@ -21,7 +22,7 @@ body {
   }
 
   @media screen and (max-width: 600px) {
-    .banner form .fields {
+    .banner form .legalName {
       grid-template-areas: 'a a a a a b' 'c c c c c c';
     }
   }
