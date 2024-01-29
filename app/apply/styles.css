@@ -1,0 +1,18 @@
+body .banner form .fields {
+  display: grid;
+  grid-template-areas: "a a a b c c c";
+}
+body .banner form .fields .a {
+  grid-area: a;
+}
+body .banner form .fields .b {
+  grid-area: b;
+}
+body .banner form .fields .c {
+  grid-area: c;
+}
+@media screen and (max-width: 600px) {
+  body .banner form .fields {
+    grid-template-areas: "a a a a a b" "c c c c c c";
+  }
+}/*# sourceMappingURL=styles.css.map */

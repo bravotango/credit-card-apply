@@ -161,6 +161,8 @@ body .banner h2 {
 }
 body .banner form {
   margin: var(--px-large) 0;
+  display: flex;
+  flex-direction: column;
 }
 body .banner form .fields {
   display: flex;
@@ -183,7 +185,7 @@ body .banner form .fields input {
   border-radius: var(--border-radius);
 }
 body .banner form .fields input.small {
-  width: var(--input-width-small);
+  max-width: var(--input-width-small);
 }
 body .container {
   width: 800px;
@@ -211,10 +213,11 @@ body .code-container {
     max-width: 90%;
     min-width: 380px;
   }
+  body .banner {
+    padding: 0 var(--px-large);
+  }
   body .banner form .fields {
-    width: 90%;
     display: block;
-    padding-left: var(--px-large);
   }
   body .banner form .fields input {
     width: 100%;

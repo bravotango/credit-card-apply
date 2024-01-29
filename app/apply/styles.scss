@@ -1,0 +1,28 @@
+body {
+  .banner {
+    form {
+      .fields {
+        display: grid;
+        grid-template-areas: 'a a a a a b c c c c c';
+
+        .a {
+          grid-area: a;
+        }
+
+        .b {
+          grid-area: b;
+        }
+
+        .c {
+          grid-area: c;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .banner form .fields {
+      grid-template-areas: 'a a a a a b' 'c c c c c c';
+    }
+  }
+}
