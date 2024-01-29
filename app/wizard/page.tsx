@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import './styles.css';
-import { WizardSteps } from '../models';
+import { WizardStep } from '../models';
 import LegalName from './components/LegalName';
 import Address from './components/Address';
 import DateOfBirth from './components/DateOfBirth';
@@ -10,31 +10,53 @@ import { useGlobalContext } from '../Context/store';
 import GlobalState from '../components/GlobalState'; // Assuming this is the correct import path
 
 interface WizardProps {
-  currentStep: WizardSteps;
+  currentStep: WizardStep;
 }
 
 const Wizard: React.FC<WizardProps> = () => {
-  const { wizard } = useGlobalContext();
+  const { wizard, setWizard } = useGlobalContext();
   const currentStep = wizard.currentStep;
 
   const displayComponent = () => {
     switch (currentStep) {
-      case WizardSteps.LegalName:
+      case WizardStep.LegalName:
         return <LegalName />;
-      case WizardSteps.Address:
+      case WizardStep.Address:
         return <Address />;
-      case WizardSteps.DateOfBirth:
+      case WizardStep.DateOfBirth:
         return <DateOfBirth />;
-      case WizardSteps.ReviewAndSubmit:
+      case WizardStep.ReviewAndSubmit:
         return <ReviewAndSubmit />;
       default:
         // Bruh - why are you here?
         return null;
     }
   };
+  const goBack = (): void => {
+    const previousStep = (): WizardStep => {
+      switch (currentStep) {
+        case WizardStep.LegalName:
+          return WizardStep.LegalName;
+        case WizardStep.Address:
+          return WizardStep.LegalName;
+        case WizardStep.DateOfBirth:
+          return WizardStep.Address;
+        case WizardStep.ReviewAndSubmit:
+          return WizardStep.DateOfBirth;
+        default:
+          return WizardStep.LegalName;
+      }
+    };
+
+    setWizard((prevWizard) => ({
+      ...prevWizard,
+      currentStep: previousStep(),
+    }));
+  };
 
   return (
     <>
+      <button onClick={goBack}>goooo beeeek</button>
       {displayComponent()}
       <GlobalState />
     </>

@@ -1,18 +1,20 @@
-body .banner form .fields {
+body .banner form .legalName {
   display: grid;
-  grid-template-areas: "a a a b c c c";
+  grid-template-areas: "a a a a a b c c c c c";
+  justify-content: space-between;
+  gap: var(--px-small);
 }
-body .banner form .fields .a {
+body .banner form .legalName .a {
   grid-area: a;
 }
-body .banner form .fields .b {
+body .banner form .legalName .b {
   grid-area: b;
 }
-body .banner form .fields .c {
+body .banner form .legalName .c {
   grid-area: c;
 }
 @media screen and (max-width: 600px) {
-  body .banner form .fields {
+  body .banner form .legalName {
     grid-template-areas: "a a a a a b" "c c c c c c";
   }
 }/*# sourceMappingURL=styles.css.map */

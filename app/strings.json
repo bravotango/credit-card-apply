@@ -23,6 +23,13 @@
   },
   "addressView": {
     "heading": "Nice to meet you, {name}. Let us know where you live so we can verify your identity.",
-    "subHeading": "You can add a mailing address later so we know where to send your card."
+    "subHeading": "You can add a mailing address later so we know where to send your card.",
+    "labels": {
+      "residentialAddress": "Residential address (P.O. Box is not valid)",
+      "appSuite": "Apt/suite (if applicable)"
+    },
+    "validation": {
+      "residentialAddress": "Please enter your address"
+    }
   }
 }

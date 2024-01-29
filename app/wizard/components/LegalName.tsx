@@ -2,12 +2,18 @@
 import React, { useState } from 'react';
 import strings from '../../strings.json';
 import { useGlobalContext } from '../../Context/store';
-import { WizardSteps } from '@/app/models';
+import { StepState, WizardStep } from '@/app/models';
 const LegalName = () => {
-  const { setPayload, setWizard } = useGlobalContext();
-  const [legalFirstName, setLegalFirstName] = useState('');
-  const [middleInitial, setMiddleInitial] = useState('');
-  const [legalLastName, setLegalLastName] = useState('');
+  const { payload, setPayload, setWizard } = useGlobalContext();
+  const [legalFirstName, setLegalFirstName] = useState(
+    payload.legalName.firstName
+  );
+  const [middleInitial, setMiddleInitial] = useState(
+    payload.legalName.middleInitial
+  );
+  const [legalLastName, setLegalLastName] = useState(
+    payload.legalName.lastName
+  );
 
   const handleOnSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -20,10 +26,17 @@ const LegalName = () => {
       },
     }));
 
-    // Update wizard.currentStep if there are no errors
     setWizard((prevWizard) => ({
       ...prevWizard,
-      currentStep: WizardSteps.Address,
+      currentStep: WizardStep.Address,
+      steps: [
+        {
+          ...prevWizard.steps[0],
+          state: StepState.Complete,
+        },
+        // Keep the rest of the steps unchanged or update them as needed
+        ...prevWizard.steps.slice(1),
+      ],
     }));
   };
 
@@ -33,7 +46,7 @@ const LegalName = () => {
         <h1>{strings.legalNameView.heading}</h1>
         <h2>{strings.legalNameView.subHeading}</h2>
         <form onSubmit={handleOnSubmit}>
-          <div className='fields'>
+          <div className='legalName'>
             <label className='a'>
               {strings.legalNameView.labels.firstName}
               <input

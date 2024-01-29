@@ -8,7 +8,7 @@ export type Payload = {
   legalName: LegalName;
 };
 
-export enum WizardSteps {
+export enum WizardStep {
   LegalName = 'LegalName',
   Address = 'Address',
   DateOfBirth = 'DateOfBirth',
@@ -21,12 +21,12 @@ export enum StepState {
 }
 
 type Step = {
-  title: WizardSteps;
+  title: WizardStep;
   state: StepState;
 };
 export type Wizard = {
   steps: Step[];
   isComplete: boolean;
   isCloseModalOpen: boolean;
-  currentStep: WizardSteps;
+  currentStep: WizardStep;
 };
