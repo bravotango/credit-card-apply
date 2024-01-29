@@ -7,7 +7,7 @@ const page = () => {
     <div className='banner'>
       <main className='container stack'>
         <h1>{strings.getStartedView.heading}</h1>
-        <Link href='./apply' className='button'>
+        <Link href='./wizard' className='button'>
           {strings.getStartedView.buttonText}
         </Link>
       </main>

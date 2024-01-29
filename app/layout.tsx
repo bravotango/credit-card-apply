@@ -4,7 +4,7 @@ import './globals.css';
 import Logo from '../public/nordstrom-logo.svg';
 import Image from 'next/image';
 import { GlobalContextProvider } from './Context/store';
-import Payload from './components/Payload';
+import Payload from './components/GlobalState';
 
 const catamaran = Catamaran({ subsets: ['latin'], weight: '600' });
 
