@@ -20,7 +20,7 @@ export enum StepState {
   Error = 'Error',
 }
 
-type Step = {
+export type Step = {
   title: WizardStep;
   state: StepState;
 };
