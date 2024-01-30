@@ -87,7 +87,7 @@ body {
   .stack {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
     min-height: 400px;
   }

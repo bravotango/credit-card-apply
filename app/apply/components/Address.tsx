@@ -31,7 +31,7 @@ const Address = () => {
                 onChange={(e) => setAddress(e.target.value)}
               />
             </label>
-            {address}
+            <button type='submit'>{strings.shared.button.next}</button>
           </form>
         </main>
       </div>
