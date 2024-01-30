@@ -6,7 +6,8 @@
     }
   },
   "getStartedView": {
-    "heading": "See if you're pre-approved for card offers—with no harm to your credit",
+    "heading": "See if you're pre-approved for card offers",
+    "subHeading": "—with no harm to your credit—",
     "buttonText": "Get started"
   },
   "legalNameView": {
@@ -22,8 +23,8 @@
     }
   },
   "addressView": {
-    "heading": "Nice to meet you, {name}. Let us know where you live so we can verify your identity.",
-    "subHeading": "You can add a mailing address later so we know where to send your card.",
+    "heading": "Nice to meet you, {name}. ",
+    "subHeading": "Let us know where you live so we can verify your identity.",
     "labels": {
       "residentialAddress": "Residential address (P.O. Box is not valid)",
       "appSuite": "Apt/suite (if applicable)"

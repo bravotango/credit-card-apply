@@ -56,7 +56,7 @@ const Wizard: React.FC<WizardProps> = () => {
 
   return (
     <>
-      <button onClick={goBack}>goooo beeeek</button>
+      <button onClick={goBack}>Back</button>
       {displayComponent()}
       <GlobalState />
     </>
