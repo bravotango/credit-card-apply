@@ -1,36 +1,46 @@
 {
-  "shared": {
-    "button": {
-      "goBack": "Back",
-      "next": "Next"
+  "Shared": {
+    "Button": {
+      "GoBack": "Back",
+      "Next": "Next"
     }
   },
-  "getStartedView": {
-    "heading": "See if you're pre-approved for card offers",
-    "subHeading": "—with no harm to your credit—",
-    "buttonText": "Get started"
+  "GetStarted": {
+    "Heading": "See if you're pre-approved for card offers",
+    "SubHeading": "—with no harm to your credit—",
+    "ButtonText": "Get started"
   },
-  "legalNameView": {
-    "heading": "What's your legal name?",
-    "subHeading": "We need your legal name to verify your identity.",
-    "labels": {
-      "firstName": "Legal first name",
-      "middleInitial": "MI",
-      "lastName": "Legal last name"
+  "LegalName": {
+    "Heading": "What's your legal name?",
+    "SubHeading": "We need your legal name to verify your identity.",
+    "Label": {
+      "FirstName": "Legal first name",
+      "MiddleInitial": "MI",
+      "LastName": "Legal last name"
     },
-    "validation": {
-      "firstName": "Please enter a valid first name (letters only)"
+    "Validation": {
+      "FirstName": "Please enter a valid first name (letters only)"
     }
   },
-  "addressView": {
-    "heading": "Nice to meet you, {name}. ",
-    "subHeading": "Let us know where you live so we can verify your identity.",
-    "labels": {
-      "residentialAddress": "Residential address (P.O. Box is not valid)",
-      "appSuite": "Apt/suite (if applicable)"
+  "DateOfBirth": {
+    "Heading": "Nice to meet you, {name}.",
+    "SubHeading": "What's your birthday?",
+    "Label": {
+      "Dob": "Date of Birth"
     },
-    "validation": {
-      "residentialAddress": "Please enter your address"
+    "Validation": {
+      "Dob": "We need your date of birth to verify your identity."
+    }
+  },
+  "Address": {
+    "Heading": "Okay, now let's validate your address {name}. ",
+    "SubHeading": "Let us know where you live so we can verify your identity.",
+    "Label": {
+      "ResidentialAddress": "Residential address (P.O. Box is not valid)",
+      "AppSuite": "Apt/suite (if applicable)"
+    },
+    "Validation": {
+      "ResidentialAddress": "Please enter your address"
     }
   }
 }

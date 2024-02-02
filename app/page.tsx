@@ -6,10 +6,10 @@ const page = () => {
   return (
     <div className='banner'>
       <main className='container stack'>
-        <h1>{strings.getStartedView.heading}</h1>
-        <h2>{strings.getStartedView.subHeading}</h2>
+        <h1>{strings.GetStarted.Heading}</h1>
+        <h2>{strings.GetStarted.SubHeading}</h2>
         <Link href='./apply' className='button'>
-          {strings.getStartedView.buttonText}
+          {strings.GetStarted.ButtonText}
         </Link>
       </main>
     </div>

@@ -6,27 +6,37 @@ type LegalName = {
 
 export type Payload = {
   legalName: LegalName;
+  address: string;
+  dateOfBirth: string;
 };
 
 export enum WizardStep {
   LegalName = 'LegalName',
-  Address = 'Address',
   DateOfBirth = 'DateOfBirth',
+  Address = 'Address',
   ReviewAndSubmit = 'ReviewAndSubmit',
 }
 export enum StepState {
   Complete = 'Complete',
   NotStarted = 'NotStarted',
+  Started = 'Started',
   Error = 'Error',
+}
+export enum TransitionDirection {
+  None = '',
+  SlideLeft = 'slide-left',
+  SlideRight = 'slide-right',
 }
 
 export type Step = {
   title: WizardStep;
   state: StepState;
+  isFirstStep: boolean;
 };
 export type Wizard = {
   steps: Step[];
   isComplete: boolean;
   isCloseModalOpen: boolean;
   currentStep: WizardStep;
+  transitionDirection: TransitionDirection;
 };

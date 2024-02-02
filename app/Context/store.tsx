@@ -9,7 +9,13 @@ import React, {
   ReactNode,
 } from 'react';
 
-import { Payload, StepState, Wizard, WizardStep } from '../models';
+import {
+  Payload,
+  StepState,
+  TransitionDirection,
+  Wizard,
+  WizardStep,
+} from '../models';
 
 interface ContextProps {
   payload: Payload;
@@ -33,17 +39,36 @@ export const GlobalContextProvider: React.FC<GlobalContextProviderProps> = ({
       lastName: '',
       middleInitial: '',
     },
+    address: '',
+    dateOfBirth: '',
   };
   const initWizard: Wizard = {
     steps: [
-      { state: StepState.NotStarted, title: WizardStep.LegalName },
-      { state: StepState.NotStarted, title: WizardStep.Address },
-      { state: StepState.NotStarted, title: WizardStep.DateOfBirth },
-      { state: StepState.NotStarted, title: WizardStep.ReviewAndSubmit },
+      {
+        state: StepState.NotStarted,
+        title: WizardStep.LegalName,
+        isFirstStep: true,
+      },
+      {
+        state: StepState.NotStarted,
+        title: WizardStep.Address,
+        isFirstStep: false,
+      },
+      {
+        state: StepState.NotStarted,
+        title: WizardStep.DateOfBirth,
+        isFirstStep: false,
+      },
+      {
+        state: StepState.NotStarted,
+        title: WizardStep.ReviewAndSubmit,
+        isFirstStep: false,
+      },
     ],
     isComplete: false,
     isCloseModalOpen: false,
     currentStep: WizardStep.LegalName,
+    transitionDirection: TransitionDirection.SlideRight,
   };
 
   const [payload, setPayload] = useState<Payload>(initPayload);

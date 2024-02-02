@@ -14,17 +14,39 @@
   --font-size-medium: 1.15rem;
   --font-size-large: 1.75rem;
 }
+// Small reset
+html,
+body {
+  padding: 0;
+  margin: 0;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+// Small reset: end
 
 body {
   margin: 0;
   overflow: scroll;
   display: flex;
   flex-direction: column;
-  .button-container {
-    text-align: center;
-    margin-top: var(
-      --px-small
-    ); // Add some top margin to separate the button from the inputs
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
   }
   .button,
   button {
@@ -59,7 +81,7 @@ body {
       margin: var(--px-large) 0;
       display: flex;
       flex-direction: column;
-
+      min-height: 200px;
       label {
         font-size: var(--font-size-small);
         display: flex;
@@ -89,21 +111,23 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    min-height: 400px;
   }
   .code-container {
+    display: block;
     white-space: pre-wrap;
     background-color: #f7f7f7;
     padding: var(--px-large);
     border-radius: var(--border-radius);
     margin-bottom: var(--px-large);
     font-family: 'Courier New', monospace;
+    line-height: calc(var(--font-size-small) * 2);
+    font-size: var(--font-size-small);
   }
 
   @media screen and (max-width: 800px) {
     .container {
       max-width: 90%;
-      min-width: 380px;
+      min-width: 280px;
     }
     .banner {
       padding: 0 var(--px-large);
