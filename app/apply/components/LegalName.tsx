@@ -28,13 +28,12 @@ const LegalName = () => {
 
     setWizard((prevWizard) => ({
       ...prevWizard,
-      currentStep: WizardStep.Address,
+      currentStep: WizardStep.DateOfBirth,
       steps: [
         {
           ...prevWizard.steps[0],
           state: StepState.Complete,
         },
-        // Keep the rest of the steps unchanged or update them as needed
         ...prevWizard.steps.slice(1),
       ],
     }));
@@ -43,26 +42,26 @@ const LegalName = () => {
   return (
     <div className='banner stack'>
       <main>
-        <h1>{strings.legalNameView.heading}</h1>
-        <h2>{strings.legalNameView.subHeading}</h2>
+        <h1>{strings.LegalName.Heading}</h1>
+        <h2>{strings.LegalName.SubHeading}</h2>
         <form onSubmit={handleOnSubmit}>
           <div className='legalName'>
             <label className='a'>
-              {strings.legalNameView.labels.firstName}
+              {strings.LegalName.Label.FirstName}
               <input
                 required
                 type='text'
                 pattern='[A-Za-z]{1,}'
-                title={strings.legalNameView.validation.firstName}
+                title={strings.LegalName.Validation.FirstName}
                 value={legalFirstName}
                 onChange={(e) => setLegalFirstName(e.target.value)}
               />
             </label>
             <label className='b'>
-              {strings.legalNameView.labels.middleInitial}
+              {strings.LegalName.Label.MiddleInitial}
               <input
                 className='small'
-                maxLength={2}
+                maxLength={1}
                 pattern='[A-Za-z]{1,}'
                 type='text'
                 value={middleInitial}
@@ -72,7 +71,7 @@ const LegalName = () => {
               />
             </label>
             <label className='c'>
-              {strings.legalNameView.labels.lastName}
+              {strings.LegalName.Label.LastName}
               <input
                 required
                 type='text'
@@ -84,7 +83,7 @@ const LegalName = () => {
               />
             </label>
           </div>
-          <button type='submit'>{strings.shared.button.next}</button>
+          <button type='submit'>{strings.Shared.Button.Next}</button>
         </form>
       </main>
     </div>
