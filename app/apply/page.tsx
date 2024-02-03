@@ -3,7 +3,7 @@ import './styles.css';
 import { TransitionDirection, WizardStep } from '../models';
 import { Address, DateOfBirth, LegalName, ReviewAndSubmit } from './components';
 import { useGlobalContext } from '../Context/store';
-import GlobalState from '../components/GlobalState';
+import GlobalState from '../components/displayStore';
 import Link from 'next/link';
 
 const Wizard: React.FC = () => {

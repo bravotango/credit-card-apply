@@ -37,27 +37,23 @@ body img {
   box-sizing: border-box;
 }
 
+html,
 body {
-  margin: 0;
-  overflow: scroll;
+  height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 body main {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-}
-body .button,
-body button {
-  border: 1px solid var(--primary-text-color);
-  border-radius: var(--border-radius);
-  margin: var(--px-large) auto;
-  text-align: center;
-  min-width: var(--button-width);
-  padding: var(--px-small);
-  background-color: var(--primary-bg-color);
-  color: var(--primary-text-color);
 }
 body .logo {
   margin: var(--px-small) 0;
@@ -97,6 +93,17 @@ body .banner form input {
 }
 body .banner form input.small {
   max-width: var(--input-width-small);
+}
+body .button,
+body button {
+  border: 1px solid var(--primary-text-color);
+  border-radius: var(--border-radius);
+  margin: var(--px-large) auto;
+  text-align: center;
+  min-width: var(--button-width);
+  padding: var(--px-small);
+  background-color: var(--primary-bg-color);
+  color: var(--primary-text-color);
 }
 body .container {
   width: 800px;
