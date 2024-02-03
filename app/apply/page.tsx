@@ -1,95 +1,36 @@
 'use client';
+import React, { useState } from 'react';
 import './styles.css';
-import { TransitionDirection, WizardStep } from '../models';
-import { Address, DateOfBirth, LegalName, ReviewAndSubmit } from './components';
-import { useGlobalContext } from '../Context/store';
-import GlobalState from '../components/displayStore';
-import Link from 'next/link';
+import Wizard from '../components/wizard';
+import { LegalName, Address, DateOfBirth, ReviewAndSubmit } from './components';
+import { WizardStep } from '../models';
 
-const Wizard: React.FC = () => {
-  const { wizard, setWizard } = useGlobalContext();
-  const { currentStep, transitionDirection } = wizard;
+const Page: React.FC = () => {
+  const [currentStep, setCurrentStep] = useState<WizardStep>(
+    WizardStep.LegalName
+  );
 
-  const displayComponent = () => {
-    switch (currentStep) {
-      case WizardStep.LegalName:
-        return <LegalName />;
-      case WizardStep.Address:
-        return <Address />;
-      case WizardStep.DateOfBirth:
-        return <DateOfBirth />;
-      case WizardStep.ReviewAndSubmit:
-        return <ReviewAndSubmit />;
-      default:
-        return null;
-    }
+  const wizardComponents: Record<WizardStep, React.ReactNode> = {
+    [WizardStep.LegalName]: <LegalName />,
+    [WizardStep.Address]: <Address />,
+    [WizardStep.DateOfBirth]: <DateOfBirth />,
+    [WizardStep.ReviewAndSubmit]: <ReviewAndSubmit />,
   };
 
-  const goBack = (): void => {
-    const previousStep = (): WizardStep => {
-      switch (currentStep) {
-        case WizardStep.LegalName:
-          return WizardStep.LegalName;
-        case WizardStep.DateOfBirth:
-          return WizardStep.LegalName;
-        case WizardStep.Address:
-          return WizardStep.DateOfBirth;
-        case WizardStep.ReviewAndSubmit:
-          return WizardStep.Address;
-        default:
-          return WizardStep.LegalName;
-      }
-    };
-
-    setWizard((prevWizard) => ({
-      ...prevWizard,
-      currentStep: previousStep(),
-      transitionDirection: TransitionDirection.SlideRight,
-    }));
-  };
-
-  const goForward = (): void => {
-    const nextStep = (): WizardStep => {
-      switch (currentStep) {
-        case WizardStep.LegalName:
-          return WizardStep.DateOfBirth;
-        case WizardStep.DateOfBirth:
-          return WizardStep.Address;
-        case WizardStep.Address:
-          return WizardStep.ReviewAndSubmit;
-        case WizardStep.ReviewAndSubmit:
-          return WizardStep.ReviewAndSubmit;
-        default:
-          return WizardStep.LegalName;
-      }
-    };
-
-    setWizard((prevWizard) => ({
-      ...prevWizard,
-      currentStep: nextStep(),
-      transitionDirection: TransitionDirection.SlideLeft,
-    }));
-  };
-
-  const onAnimationEnd = (): void => {
-    transitionDirection: TransitionDirection.None;
+  const handleStepChange = (newStep: WizardStep): void => {
+    setCurrentStep(newStep);
   };
 
   return (
-    <div
-      className={`wizard-container ${transitionDirection}`}
-      onAnimationEnd={onAnimationEnd}
-    >
-      <div className='wizard-content'>
-        <Link href='#' onClick={goBack}>
-          Back
-        </Link>
-        {displayComponent()}
-        <button onClick={goForward}>Next</button>
-        <GlobalState />
-      </div>
+    <div>
+      <Wizard
+        currentStep={currentStep}
+        components={wizardComponents}
+        onStepChange={handleStepChange}
+      />
+      {/* You can add more child components here */}
     </div>
   );
 };
 
-export default Wizard;
+export default Page;
