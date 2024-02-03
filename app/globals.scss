@@ -38,26 +38,21 @@ body {
 }
 // Small reset: end
 
+html,
 body {
-  margin: 0;
-  overflow: scroll;
+  height: 100vh;
   display: flex;
   flex-direction: column;
+}
+body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
   main {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-  }
-  .button,
-  button {
-    border: 1px solid var(--primary-text-color);
-    border-radius: var(--border-radius);
-    margin: var(--px-large) auto;
-    text-align: center;
-    min-width: var(--button-width);
-    padding: var(--px-small);
-    background-color: var(--primary-bg-color);
-    color: var(--primary-text-color);
   }
   .logo {
     margin: var(--px-small) 0;
@@ -99,6 +94,17 @@ body {
         }
       }
     }
+  }
+  .button,
+  button {
+    border: 1px solid var(--primary-text-color);
+    border-radius: var(--border-radius);
+    margin: var(--px-large) auto;
+    text-align: center;
+    min-width: var(--button-width);
+    padding: var(--px-small);
+    background-color: var(--primary-bg-color);
+    color: var(--primary-text-color);
   }
   .container {
     width: 800px;
