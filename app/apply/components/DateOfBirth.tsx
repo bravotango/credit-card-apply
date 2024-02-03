@@ -1,3 +1,4 @@
+'use client';
 import React, { useState } from 'react';
 import strings from '../../strings.json';
 import { useGlobalContext } from '@/app/Context/store';
