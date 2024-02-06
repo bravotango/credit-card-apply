@@ -45,8 +45,6 @@ const Address = () => {
               <input
                 required
                 type='text'
-                pattern='[A-Za-z0-9]{1,}'
-                title={strings.LegalName.Validation.FirstName}
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
               />
