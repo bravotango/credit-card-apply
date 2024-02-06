@@ -10,7 +10,7 @@ const catamaran = Catamaran({ subsets: ['latin'], weight: '600' });
 
 export const metadata: Metadata = {
   title: 'Credit card application',
-  description: 'NextJS 13+',
+  description: 'NextJS 14+',
 };
 
 export default function RootLayout({
@@ -21,10 +21,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <Head>
-        <meta
-          name='viewport'
-          content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0'
-        />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
       </Head>
       <body className={catamaran.className} suppressHydrationWarning={true}>
         <div className='container'>

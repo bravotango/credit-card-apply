@@ -86,6 +86,7 @@ body .banner form label {
 }
 body .banner form input {
   color: #000;
+  font-size: 16px;
   background-color: var(--primary-text-color);
   height: var(--input-height);
   padding: var(--px-small);
