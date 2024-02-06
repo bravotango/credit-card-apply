@@ -90,7 +90,6 @@ body .banner form input {
   font-size: 16px;
   background-color: var(--primary-text-color);
   height: var(--input-height);
-  width: var(--input-width);
   padding: var(--px-small);
   border-radius: var(--border-radius);
 }
