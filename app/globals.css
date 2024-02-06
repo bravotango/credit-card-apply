@@ -51,7 +51,6 @@ body {
   height: 100vh;
 }
 body main {
-  min-width: 800px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
