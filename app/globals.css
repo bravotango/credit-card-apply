@@ -51,7 +51,7 @@ body {
   height: 100vh;
 }
 body main {
-  width: 100%;
+  min-width: 800px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -78,7 +78,6 @@ body .banner form {
   display: flex;
   flex-direction: column;
   min-height: 200px;
-  width: 100%;
 }
 body .banner form label {
   font-size: var(--font-size-small);
