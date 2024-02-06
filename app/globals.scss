@@ -77,6 +77,7 @@ body {
       display: flex;
       flex-direction: column;
       min-height: 200px;
+      width: 100%;
       label {
         font-size: var(--font-size-small);
         display: flex;
@@ -88,6 +89,7 @@ body {
         font-size: 16px;
         background-color: var(--primary-text-color);
         height: var(--input-height);
+        width: var(--input-width);
         padding: var(--px-small);
         border-radius: var(--border-radius);
         &.small {
