@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { TransitionDirection, WizardStep } from '../models';
 import { useGlobalContext } from '../Context/store';
-import GlobalState from '../components/displayStore';
+
 import Link from 'next/link';
 
 type WizardProps = {
@@ -92,12 +92,9 @@ const Wizard: React.FC<WizardProps> = ({
       onAnimationEnd={onAnimationEnd}
     >
       <div className='wizard-content'>
-        <Link href='#' onClick={goBack}>
-          Back
-        </Link>
+        <button onClick={goBack}>Back</button>
         {displayComponent()}
-        <button onClick={goForward}>Next</button>
-        <GlobalState />
+        <button onClick={goForward}>Forward</button>
       </div>
     </div>
   );

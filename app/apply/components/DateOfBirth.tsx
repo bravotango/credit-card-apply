@@ -18,43 +18,38 @@ const DateOfBirth = () => {
 
     setWizard((prevWizard) => ({
       ...prevWizard,
-      currentStep: WizardStep.Address,
-      steps: [
-        {
-          ...prevWizard.steps[0],
-          state: StepState.Complete,
-        },
-        ...prevWizard.steps.slice(1),
-      ],
+      steps: prevWizard.steps.map((step) =>
+        step.title === WizardStep.DateOfBirth
+          ? { ...step, state: StepState.Complete }
+          : step
+      ),
     }));
   };
 
   return (
-    <>
-      <div className='banner stack'>
-        <main>
-          <h1>
-            {stringReplace(strings.DateOfBirth.Heading, {
-              name: payload.legalName.firstName,
-            })}
-          </h1>
-          <h2>{strings.DateOfBirth.SubHeading}</h2>
-          <form onSubmit={handleOnSubmit}>
-            <label>
-              {strings.DateOfBirth.Label.Dob}
-              <input
-                type='date'
-                required
-                title={strings.DateOfBirth.Validation.Dob}
-                value={dateOfBirth}
-                onChange={(e) => setDateOfBirth(e.target.value)}
-              />
-            </label>
-            <button type='submit'>{strings.Shared.Button.Next}</button>
-          </form>
-        </main>
-      </div>
-    </>
+    <div className='stack'>
+      <main>
+        <h1>
+          {stringReplace(strings.DateOfBirth.Heading, {
+            name: payload.legalName.firstName,
+          })}
+        </h1>
+        <h2>{strings.DateOfBirth.SubHeading}</h2>
+        <form onSubmit={handleOnSubmit}>
+          <label>
+            {strings.DateOfBirth.Label.Dob}
+            <input
+              type='date'
+              required
+              title={strings.DateOfBirth.Validation.Dob}
+              value={dateOfBirth}
+              onChange={(e) => setDateOfBirth(e.target.value)}
+            />
+          </label>
+          <button type='submit'>{strings.Shared.Button.Next}</button>
+        </form>
+      </main>
+    </div>
   );
 };
 export default DateOfBirth;

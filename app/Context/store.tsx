@@ -51,12 +51,12 @@ export const GlobalContextProvider: React.FC<GlobalContextProviderProps> = ({
       },
       {
         state: StepState.NotStarted,
-        title: WizardStep.Address,
+        title: WizardStep.DateOfBirth,
         isFirstStep: false,
       },
       {
         state: StepState.NotStarted,
-        title: WizardStep.DateOfBirth,
+        title: WizardStep.Address,
         isFirstStep: false,
       },
       {

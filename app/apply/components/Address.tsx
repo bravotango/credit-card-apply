@@ -18,42 +18,37 @@ const Address = () => {
 
     setWizard((prevWizard) => ({
       ...prevWizard,
-      currentStep: WizardStep.Address,
-      steps: [
-        {
-          ...prevWizard.steps[0],
-          state: StepState.Complete,
-        },
-        ...prevWizard.steps.slice(1),
-      ],
+      steps: prevWizard.steps.map((step) =>
+        step.title === WizardStep.Address
+          ? { ...step, state: StepState.Complete }
+          : step
+      ),
     }));
   };
 
   return (
-    <>
-      <div className='banner stack'>
-        <main>
-          <h1>
-            {stringReplace(strings.Address.Heading, {
-              name: payload.legalName.firstName,
-            })}
-          </h1>
-          <h2>{strings.Address.SubHeading}</h2>
-          <form onSubmit={handleOnSubmit}>
-            <label>
-              {strings.Address.Label.ResidentialAddress}
-              <input
-                required
-                type='text'
-                value={address}
-                onChange={(e) => setAddress(e.target.value)}
-              />
-            </label>
-            <button type='submit'>{strings.Shared.Button.Next}</button>
-          </form>
-        </main>
-      </div>
-    </>
+    <div className='stack'>
+      <main>
+        <h1>
+          {stringReplace(strings.Address.Heading, {
+            name: payload.legalName.firstName,
+          })}
+        </h1>
+        <h2>{strings.Address.SubHeading}</h2>
+        <form onSubmit={handleOnSubmit}>
+          <label>
+            {strings.Address.Label.ResidentialAddress}
+            <input
+              required
+              type='text'
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
+            />
+          </label>
+          <button type='submit'>{strings.Shared.Button.Next}</button>
+        </form>
+      </main>
+    </div>
   );
 };
 
