@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import './styles.css';
 import Wizard from '../components/wizard';
+import GlobalState from '../components/displayStore';
 import { LegalName, Address, DateOfBirth, ReviewAndSubmit } from './components';
 import { WizardStep } from '../models';
 
@@ -22,14 +23,16 @@ const Page: React.FC = () => {
   };
 
   return (
-    <div>
-      <Wizard
-        currentStep={currentStep}
-        components={wizardComponents}
-        onStepChange={handleStepChange}
-      />
-      {/* You can add more child components here */}
-    </div>
+    <>
+      <div className='banner'>
+        <Wizard
+          currentStep={currentStep}
+          components={wizardComponents}
+          onStepChange={handleStepChange}
+        />
+      </div>
+      <GlobalState />
+    </>
   );
 };
 

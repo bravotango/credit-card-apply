@@ -3,7 +3,7 @@ body {
     form {
       .legalName {
         display: grid;
-        grid-template-areas: 'a a a a a b c c c c c';
+        grid-template-areas: ' a b b c c c c';
         justify-content: space-between;
         gap: var(--px-small);
         .a {

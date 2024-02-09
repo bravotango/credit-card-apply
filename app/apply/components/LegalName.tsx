@@ -28,23 +28,21 @@ const LegalName = () => {
 
     setWizard((prevWizard) => ({
       ...prevWizard,
-      currentStep: WizardStep.DateOfBirth,
-      steps: [
-        {
-          ...prevWizard.steps[0],
-          state: StepState.Complete,
-        },
-        ...prevWizard.steps.slice(1),
-      ],
+      steps: prevWizard.steps.map((step) =>
+        step.title === WizardStep.LegalName
+          ? { ...step, state: StepState.Complete }
+          : step
+      ),
     }));
   };
 
   return (
-    <div className='banner stack'>
+    <div className='stack'>
       <main>
         <h1>{strings.LegalName.Heading}</h1>
         <h2>{strings.LegalName.SubHeading}</h2>
         <form onSubmit={handleOnSubmit}>
+          {legalFirstName}
           <div className='legalName'>
             <label className='a'>
               {strings.LegalName.Label.FirstName}
@@ -70,6 +68,7 @@ const LegalName = () => {
                 }}
               />
             </label>
+            {legalLastName}
             <label className='c'>
               {strings.LegalName.Label.LastName}
               <input

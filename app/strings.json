@@ -15,7 +15,7 @@
     "SubHeading": "We need your legal name to verify your identity.",
     "Label": {
       "FirstName": "Legal first name",
-      "MiddleInitial": "MI",
+      "MiddleInitial": "Middle initial",
       "LastName": "Legal last name"
     },
     "Validation": {
@@ -33,7 +33,7 @@
     }
   },
   "Address": {
-    "Heading": "Okay, now let's validate your address {name}. ",
+    "Heading": "Now let's validate your address {name}. ",
     "SubHeading": "Let us know where you live so we can verify your identity.",
     "Label": {
       "ResidentialAddress": "Residential address (P.O. Box is not valid)",
