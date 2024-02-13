@@ -42,7 +42,6 @@ const LegalName = () => {
         <h1>{strings.LegalName.Heading}</h1>
         <h2>{strings.LegalName.SubHeading}</h2>
         <form onSubmit={handleOnSubmit}>
-          {legalFirstName}
           <div className='legalName'>
             <label className='a'>
               {strings.LegalName.Label.FirstName}
@@ -67,7 +66,6 @@ const LegalName = () => {
                 }}
               />
             </label>
-            {legalLastName}
             <label className='c'>
               {strings.LegalName.Label.LastName}
               <input

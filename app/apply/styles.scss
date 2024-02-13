@@ -3,7 +3,8 @@ body {
     form {
       .legalName {
         display: grid;
-        grid-template-columns: 40% 20% 40%;
+        grid-template-areas: 'a b c';
+        grid-template-columns: 50% 10% 40%;
         grid-gap: 1rem;
         justify-content: space-between;
         gap: var(--px-small);
@@ -24,7 +25,8 @@ body {
 
   @media screen and (max-width: 800px) {
     .banner form .legalName {
-      grid-template-areas: 'a a b' 'c c c';
+      grid-template-areas: 'a b' 'c c';
+      grid-template-columns: 80% 20%;
     }
   }
 }
