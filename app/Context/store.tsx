@@ -64,6 +64,11 @@ export const GlobalContextProvider: React.FC<GlobalContextProviderProps> = ({
         title: WizardStep.ReviewAndSubmit,
         isFirstStep: false,
       },
+      {
+        state: StepState.NotStarted,
+        title: WizardStep.Congratulations,
+        isFirstStep: false,
+      },
     ],
     isComplete: false,
     isCloseModalOpen: false,

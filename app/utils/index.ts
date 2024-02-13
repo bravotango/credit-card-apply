@@ -31,12 +31,14 @@ export const getPreviousStep = (currentStep: WizardStep): WizardStep => {
 
 export const getNextStep = (currentStep: WizardStep): WizardStep => {
   switch (currentStep) {
-    case 'LegalName':
+    case WizardStep.LegalName:
       return WizardStep.DateOfBirth;
-    case 'DateOfBirth':
+    case WizardStep.DateOfBirth:
       return WizardStep.Address;
-    case 'Address':
+    case WizardStep.Address:
       return WizardStep.ReviewAndSubmit;
+    case WizardStep.ReviewAndSubmit:
+      return WizardStep.Congratulations;
     default:
       return WizardStep.LegalName;
   }

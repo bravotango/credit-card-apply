@@ -15,8 +15,11 @@
     "SubHeading": "We need your legal name to verify your identity.",
     "Label": {
       "FirstName": "Legal first name",
-      "MiddleInitial": "Middle initial",
-      "LastName": "Legal last name"
+      "MiddleInitial": "MI",
+      "LastName": "Legal last name",
+      "Title": {
+        "MiddleInitial": "Middle initial"
+      }
     },
     "Validation": {
       "FirstName": "Please enter a valid first name (letters only)"

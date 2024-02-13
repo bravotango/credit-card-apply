@@ -15,6 +15,7 @@ export enum WizardStep {
   DateOfBirth = 'DateOfBirth',
   Address = 'Address',
   ReviewAndSubmit = 'ReviewAndSubmit',
+  Congratulations = 'Congratulations',
 }
 export enum StepState {
   Complete = 'Complete',

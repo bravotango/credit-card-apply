@@ -58,7 +58,6 @@ const LegalName = () => {
             <label className='b'>
               {strings.LegalName.Label.MiddleInitial}
               <input
-                className='small'
                 maxLength={1}
                 pattern='[A-Za-z]{1,}'
                 type='text'
