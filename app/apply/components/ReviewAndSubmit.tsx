@@ -1,10 +1,24 @@
 import React, { useState } from 'react';
-import { useGlobalContext } from '@/app/Context/store';
+import { useGlobalContext } from '../../Context/store';
+import { StepState, WizardStep } from '@/app/models';
 import strings from '../../strings.json';
 
 const ReviewAndSubmit = () => {
-  const { payload } = useGlobalContext();
+  const { payload, setPayload, setWizard } = useGlobalContext();
   const [state] = useState(payload);
+
+  const handleOnSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setWizard((prevWizard) => ({
+      ...prevWizard,
+      steps: prevWizard.steps.map((step) =>
+        step.title === WizardStep.ReviewAndSubmit
+          ? { ...step, state: StepState.Complete }
+          : step
+      ),
+    }));
+  };
+
   return (
     <div className='stack'>
       <main>
@@ -24,6 +38,9 @@ const ReviewAndSubmit = () => {
         <p>
           {strings.DateOfBirth.Label.Dob}: {state.dateOfBirth}
         </p>
+        <form onSubmit={handleOnSubmit}>
+          <button type='submit'>{strings.Shared.Button.Next}</button>
+        </form>
       </main>
     </div>
   );

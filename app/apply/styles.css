@@ -1,6 +1,7 @@
 body .banner form .legalName {
   display: grid;
-  grid-template-areas: " a b b c c c c";
+  grid-template-columns: 40% 20% 40%;
+  grid-gap: 1rem;
   justify-content: space-between;
   gap: var(--px-small);
 }
@@ -13,9 +14,9 @@ body .banner form .legalName .b {
 body .banner form .legalName .c {
   grid-area: c;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   body .banner form .legalName {
-    grid-template-areas: "a a a a a b" "c c c c c c";
+    grid-template-areas: "a a b" "c c c";
   }
 }
 

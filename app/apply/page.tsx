@@ -3,7 +3,13 @@ import React, { useState } from 'react';
 import './styles.css';
 import Wizard from '../components/wizard';
 import GlobalState from '../components/displayStore';
-import { LegalName, Address, DateOfBirth, ReviewAndSubmit } from './components';
+import {
+  Address,
+  Congratulations,
+  DateOfBirth,
+  LegalName,
+  ReviewAndSubmit,
+} from './components';
 import { WizardStep } from '../models';
 
 const Page: React.FC = () => {
@@ -13,9 +19,10 @@ const Page: React.FC = () => {
 
   const wizardComponents: Record<WizardStep, React.ReactNode> = {
     [WizardStep.LegalName]: <LegalName />,
-    [WizardStep.Address]: <Address />,
     [WizardStep.DateOfBirth]: <DateOfBirth />,
+    [WizardStep.Address]: <Address />,
     [WizardStep.ReviewAndSubmit]: <ReviewAndSubmit />,
+    [WizardStep.Congratulations]: <Congratulations />,
   };
 
   const handleStepChange = (newStep: WizardStep): void => {

@@ -1,9 +1,6 @@
-'use client';
 import React, { useState } from 'react';
 import { TransitionDirection, WizardStep } from '../models';
 import { useGlobalContext } from '../Context/store';
-
-import Link from 'next/link';
 
 type WizardProps = {
   currentStep: WizardStep;
@@ -17,45 +14,38 @@ const Wizard: React.FC<WizardProps> = ({
   onStepChange,
 }) => {
   const { setWizard } = useGlobalContext();
-  const [transitionDirection, setTransitionDirection] = useState<
-    string | undefined
-  >(undefined);
-  const displayComponent = () => {
-    switch (currentStep) {
-      case WizardStep.LegalName:
-        return components[WizardStep.LegalName];
-      case WizardStep.Address:
-        return components[WizardStep.Address];
-      case WizardStep.DateOfBirth:
-        return components[WizardStep.DateOfBirth];
-      case WizardStep.ReviewAndSubmit:
-        return components[WizardStep.ReviewAndSubmit];
-      default:
-        return null;
-    }
+  const [transitionDirection, setTransitionDirection] =
+    useState<TransitionDirection>(TransitionDirection.None);
+
+  const handleStepChange = (
+    newStep: WizardStep,
+    direction: TransitionDirection
+  ): void => {
+    onStepChange(newStep);
+    setWizard((prevWizard) => ({
+      ...prevWizard,
+      currentStep: newStep,
+      transitionDirection: direction,
+    }));
+    setTransitionDirection(direction);
   };
+
   const goBack = (): void => {
     const previousStep = (): WizardStep => {
       switch (currentStep) {
-        case WizardStep.LegalName:
+        case WizardStep.Address:
           return WizardStep.LegalName;
         case WizardStep.DateOfBirth:
-          return WizardStep.LegalName;
-        case WizardStep.Address:
-          return WizardStep.DateOfBirth;
-        case WizardStep.ReviewAndSubmit:
           return WizardStep.Address;
+        case WizardStep.ReviewAndSubmit:
+          return WizardStep.DateOfBirth;
+        case WizardStep.Congratulations:
+          return WizardStep.Congratulations;
         default:
           return WizardStep.LegalName;
       }
     };
-    onStepChange(previousStep());
-    setWizard((prevWizard) => ({
-      ...prevWizard,
-      currentStep: previousStep(),
-      transitionDirection: TransitionDirection.SlideRight,
-    }));
-    setTransitionDirection(TransitionDirection.SlideRight);
+    handleStepChange(previousStep(), TransitionDirection.SlideRight);
   };
 
   const goForward = (): void => {
@@ -65,25 +55,19 @@ const Wizard: React.FC<WizardProps> = ({
           return WizardStep.DateOfBirth;
         case WizardStep.DateOfBirth:
           return WizardStep.Address;
-        case WizardStep.Address:
+        case WizardStep.DateOfBirth:
           return WizardStep.ReviewAndSubmit;
         case WizardStep.ReviewAndSubmit:
-          return WizardStep.ReviewAndSubmit;
+          return WizardStep.Congratulations;
         default:
           return WizardStep.LegalName;
       }
     };
-    onStepChange(nextStep());
-    setWizard((prevWizard) => ({
-      ...prevWizard,
-      currentStep: nextStep(),
-      transitionDirection: TransitionDirection.SlideLeft,
-    }));
-    setTransitionDirection(TransitionDirection.SlideLeft);
+    handleStepChange(nextStep(), TransitionDirection.SlideLeft);
   };
 
   const onAnimationEnd = (): void => {
-    setTransitionDirection(undefined);
+    setTransitionDirection(TransitionDirection.None);
   };
 
   return (
@@ -93,7 +77,7 @@ const Wizard: React.FC<WizardProps> = ({
     >
       <div className='wizard-content'>
         <button onClick={goBack}>Back</button>
-        {displayComponent()}
+        {components[currentStep]}
         <button onClick={goForward}>Forward</button>
       </div>
     </div>
