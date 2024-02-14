@@ -39,7 +39,7 @@ const ReviewAndSubmit = () => {
           {strings.DateOfBirth.Label.Dob}: {state.dateOfBirth}
         </p>
         <form onSubmit={handleOnSubmit}>
-          <button type='submit'>{strings.Shared.Button.Next}</button>
+          <button type='submit'>{strings.Shared.Button.Submit}</button>
         </form>
       </main>
     </div>

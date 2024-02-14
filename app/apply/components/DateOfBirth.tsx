@@ -46,7 +46,7 @@ const DateOfBirth = () => {
               onChange={(e) => setDateOfBirth(e.target.value)}
             />
           </label>
-          <button type='submit'>{strings.Shared.Button.Next}</button>
+          <button type='submit'>{strings.Shared.Button.Submit}</button>
         </form>
       </main>
     </div>

@@ -45,7 +45,7 @@ const Address = () => {
               onChange={(e) => setAddress(e.target.value)}
             />
           </label>
-          <button type='submit'>{strings.Shared.Button.Next}</button>
+          <button type='submit'>{strings.Shared.Button.Submit}</button>
         </form>
       </main>
     </div>
