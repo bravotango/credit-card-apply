@@ -41,44 +41,42 @@ const LegalName = () => {
       <main>
         <h1>{strings.LegalName.Heading}</h1>
         <h2>{strings.LegalName.SubHeading}</h2>
-        <form onSubmit={handleOnSubmit}>
-          <div className='legalName'>
-            <label className='a'>
-              {strings.LegalName.Label.FirstName}
-              <input
-                required
-                type='text'
-                pattern='[A-Za-z]{1,}'
-                title={strings.LegalName.Validation.FirstName}
-                value={legalFirstName}
-                onChange={(e) => setLegalFirstName(e.target.value)}
-              />
-            </label>
-            <label className='b'>
-              {strings.LegalName.Label.MiddleInitial}
-              <input
-                maxLength={1}
-                pattern='[A-Za-z]{1,}'
-                type='text'
-                value={middleInitial}
-                onChange={(e) => {
-                  setMiddleInitial(e.target.value);
-                }}
-              />
-            </label>
-            <label className='c'>
-              {strings.LegalName.Label.LastName}
-              <input
-                required
-                type='text'
-                pattern='[A-Za-z]{1,}'
-                value={legalLastName}
-                onChange={(e) => {
-                  setLegalLastName(e.target.value);
-                }}
-              />
-            </label>
-          </div>
+        <form className='legalName' onSubmit={handleOnSubmit}>
+          <label className='a'>
+            {strings.LegalName.Label.FirstName}
+            <input
+              required
+              type='text'
+              pattern='[A-Za-z]{1,}'
+              title={strings.LegalName.Validation.FirstName}
+              value={legalFirstName}
+              onChange={(e) => setLegalFirstName(e.target.value)}
+            />
+          </label>
+          <label className='b'>
+            {strings.LegalName.Label.MiddleInitial}
+            <input
+              maxLength={1}
+              pattern='[A-Za-z]{1,}'
+              type='text'
+              value={middleInitial}
+              onChange={(e) => {
+                setMiddleInitial(e.target.value);
+              }}
+            />
+          </label>
+          <label className='c'>
+            {strings.LegalName.Label.LastName}
+            <input
+              required
+              type='text'
+              pattern='[A-Za-z]{1,}'
+              value={legalLastName}
+              onChange={(e) => {
+                setLegalLastName(e.target.value);
+              }}
+            />
+          </label>
           <button type='submit'>{strings.Shared.Button.Next}</button>
         </form>
       </main>
