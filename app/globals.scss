@@ -11,7 +11,7 @@
   --button-height: 40px;
   --focus-height: 600px;
   --font-size-small: 0.85rem;
-  --font-size-medium: 1rem;
+  --font-size-normal: 1rem;
   --font-size-large: 1.5rem;
 }
 // Small reset
@@ -38,115 +38,81 @@ body {
 }
 // Small reset: end
 
-html,
-body {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
+.logo {
+  margin: var(--px-small) 0;
+  padding: 0 var(--px-small);
 }
-body {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  main {
+
+.banner {
+  background-color: var(--primary-bg-color);
+  color: var(--primary-text-color);
+
+  h1,
+  h2 {
+    max-width: fit-content;
+    font-size: var(--font-size-large);
+    text-align: center;
+    margin: var(--px-large) auto;
+  }
+
+  h2 {
+    font-size: calc(var(--font-size-large) * 0.75);
+  }
+
+  form {
+    margin: 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-  }
-  .logo {
-    margin: var(--px-small) 0;
-    padding: 0 var(--px-small);
-  }
-
-  .banner {
-    background-color: var(--primary-bg-color);
-    color: var(--primary-text-color);
-    h1 {
-      font-size: var(--font-size-large);
-      text-align: center;
-    }
-    h2 {
-      font-size: var(--font-size-medium);
-      text-align: center;
-    }
-
-    form {
-      margin: var(--px-large) 0;
+    margin: 0 auto;
+    width: 80%;
+    label {
+      margin: 0;
+      font-size: var(--font-size-small);
       display: flex;
       flex-direction: column;
-      min-height: 200px;
-      label {
-        font-size: var(--font-size-small);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
-      input {
-        color: #000;
-        font-size: 16px;
-        background-color: var(--primary-text-color);
-        height: var(--input-height);
-        padding: var(--px-small);
-        border-radius: var(--border-radius);
-        &.small {
-          max-width: var(--input-width-small);
-        }
-      }
+    }
+    input {
+      margin: 0;
+      color: #000;
+      background-color: var(--primary-text-color);
+      height: var(--input-height);
+      padding: var(--px-small);
+      border-radius: var(--border-radius);
     }
   }
-  .button,
-  button {
-    border: 1px solid var(--primary-text-color);
-    border-radius: var(--border-radius);
-    margin: var(--px-large) auto;
-    text-align: center;
-    min-width: var(--button-width);
-    padding: var(--px-small);
-    background-color: var(--primary-bg-color);
-    color: var(--primary-text-color);
-    height: var(--button-height);
-  }
-  .container {
-    width: 800px;
-    padding: 0 var(--px-small);
-    margin: var(--px-small) auto;
-    align-items: center;
-  }
-  .stack {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-  }
-  .code-container {
-    display: block;
-    white-space: pre-wrap;
-    background-color: #f7f7f7;
-    padding: var(--px-large);
-    border-radius: var(--border-radius);
-    margin-bottom: var(--px-large);
-    font-family: 'Courier New', monospace;
-    line-height: calc(var(--font-size-small) * 2);
-    font-size: var(--font-size-small);
-  }
-
-  @media screen and (max-width: 800px) {
-    .container {
-      max-width: 90%;
-      min-width: 280px;
-    }
-    .banner {
-      padding: 0 var(--px-large);
-      form .fields {
-        display: block;
-        input {
-          width: 100%;
-          &.small {
-            width: 100%;
-          }
-        }
-      }
-    }
-  }
+}
+.button,
+button {
+  border: 1px solid var(--primary-text-color);
+  border-radius: var(--border-radius);
+  margin: var(--px-large) auto;
+  text-align: center;
+  min-width: var(--button-width);
+  padding: var(--px-small);
+  background-color: var(--primary-bg-color);
+  color: var(--primary-text-color);
+  height: var(--button-height);
+}
+.container {
+  max-width: 800px;
+  padding: 0 var(--px-small);
+  margin: var(--px-small) auto;
+  align-items: center;
+}
+.stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.code-container {
+  display: block;
+  white-space: pre-wrap;
+  background-color: #f7f7f7;
+  padding: var(--px-large);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--px-large);
+  font-family: 'Courier New', monospace;
+  line-height: calc(var(--font-size-small) * 2);
+  font-size: var(--font-size-small);
 }

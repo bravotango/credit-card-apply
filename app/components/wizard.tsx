@@ -33,10 +33,10 @@ const Wizard: React.FC<WizardProps> = ({
   const goBack = (): void => {
     const previousStep = (): WizardStep => {
       switch (currentStep) {
-        case WizardStep.Address:
-          return WizardStep.LegalName;
         case WizardStep.DateOfBirth:
-          return WizardStep.Address;
+          return WizardStep.LegalName;
+        case WizardStep.Address:
+          return WizardStep.DateOfBirth;
         case WizardStep.ReviewAndSubmit:
           return WizardStep.DateOfBirth;
         case WizardStep.Congratulations:
@@ -55,7 +55,7 @@ const Wizard: React.FC<WizardProps> = ({
           return WizardStep.DateOfBirth;
         case WizardStep.DateOfBirth:
           return WizardStep.Address;
-        case WizardStep.DateOfBirth:
+        case WizardStep.Address:
           return WizardStep.ReviewAndSubmit;
         case WizardStep.ReviewAndSubmit:
           return WizardStep.Congratulations;
