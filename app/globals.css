@@ -116,4 +116,29 @@ button {
   font-family: "Courier New", monospace;
   line-height: calc(var(--font-size-small) * 2);
   font-size: var(--font-size-small);
+}
+
+.slide-left {
+  animation: slideLeft 0.5s ease;
+}
+
+.slide-right {
+  animation: slideRight 0.5s ease;
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes slideRight {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }/*# sourceMappingURL=globals.css.map */
