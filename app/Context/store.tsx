@@ -14,7 +14,7 @@ import {
   StepState,
   TransitionDirection,
   Wizard,
-  WizardStep,
+  WizardStepTitle,
 } from '../models';
 
 interface ContextProps {
@@ -46,33 +46,33 @@ export const GlobalContextProvider: React.FC<GlobalContextProviderProps> = ({
     steps: [
       {
         state: StepState.NotStarted,
-        title: WizardStep.LegalName,
+        title: WizardStepTitle.LegalName,
         isFirstStep: true,
       },
       {
         state: StepState.NotStarted,
-        title: WizardStep.DateOfBirth,
+        title: WizardStepTitle.DateOfBirth,
         isFirstStep: false,
       },
       {
         state: StepState.NotStarted,
-        title: WizardStep.Address,
+        title: WizardStepTitle.Address,
         isFirstStep: false,
       },
       {
         state: StepState.NotStarted,
-        title: WizardStep.ReviewAndSubmit,
+        title: WizardStepTitle.ReviewAndSubmit,
         isFirstStep: false,
       },
       {
         state: StepState.NotStarted,
-        title: WizardStep.Congratulations,
+        title: WizardStepTitle.Congratulations,
         isFirstStep: false,
       },
     ],
     isComplete: false,
     isCloseModalOpen: false,
-    currentStep: WizardStep.LegalName,
+    currentStep: WizardStepTitle.LegalName,
     transitionDirection: TransitionDirection.SlideRight,
   };
 

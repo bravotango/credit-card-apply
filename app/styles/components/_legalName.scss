@@ -1,0 +1,42 @@
+form.legalName {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  .a {
+    grid-column: 1/4;
+  }
+
+  .b {
+    grid-column: 4/6;
+  }
+
+  .c {
+    grid-column: 1/6;
+  }
+
+  button,
+  .button {
+    grid-column: 3/4;
+  }
+
+  /* Media query styles */
+  @media screen and (min-width: 800px) {
+    grid-template-columns: repeat(9, 1fr);
+
+    /* Default styles */
+    .a {
+      grid-column: 1/5;
+    }
+
+    .b {
+      grid-column: 5/6;
+    }
+
+    .c {
+      grid-column: 6/10;
+    }
+    button,
+    .button {
+      grid-column: 5/6;
+    }
+  }
+}

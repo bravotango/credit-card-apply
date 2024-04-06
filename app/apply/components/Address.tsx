@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import strings from '../../strings.json';
 import { stringReplace } from '../../utils';
 import { useGlobalContext } from '../../Context/store';
-import { StepState, WizardStep } from '@/app/models';
+import { StepState, WizardStepTitle } from '@/app/models';
 
 const Address = () => {
   const { setPayload, setWizard, payload } = useGlobalContext();
@@ -19,7 +19,7 @@ const Address = () => {
     setWizard((prevWizard) => ({
       ...prevWizard,
       steps: prevWizard.steps.map((step) =>
-        step.title === WizardStep.Address
+        step.title === WizardStepTitle.Address
           ? { ...step, state: StepState.Complete }
           : step
       ),

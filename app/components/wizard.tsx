@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
-import { TransitionDirection, WizardStep } from '../models';
+import { TransitionDirection, WizardStepTitle } from '../models';
 import { useGlobalContext } from '../Context/store';
 
 type WizardProps = {
-  currentStep: WizardStep;
-  components: Record<WizardStep, React.ReactNode>;
-  onStepChange: (newStep: WizardStep) => void;
+  currentStep: WizardStepTitle;
+  stepOrder: WizardStepTitle[];
+  components: Record<WizardStepTitle, React.ReactNode>;
+  onStepChange: (newStep: WizardStepTitle) => void;
 };
 
 const Wizard: React.FC<WizardProps> = ({
   currentStep,
+  stepOrder,
   components,
   onStepChange,
 }) => {
@@ -18,7 +20,7 @@ const Wizard: React.FC<WizardProps> = ({
     useState<TransitionDirection>(TransitionDirection.None);
 
   const handleStepChange = (
-    newStep: WizardStep,
+    newStep: WizardStepTitle,
     direction: TransitionDirection
   ): void => {
     onStepChange(newStep);
@@ -31,39 +33,19 @@ const Wizard: React.FC<WizardProps> = ({
   };
 
   const goBack = (): void => {
-    const previousStep = (): WizardStep => {
-      switch (currentStep) {
-        case WizardStep.DateOfBirth:
-          return WizardStep.LegalName;
-        case WizardStep.Address:
-          return WizardStep.DateOfBirth;
-        case WizardStep.ReviewAndSubmit:
-          return WizardStep.DateOfBirth;
-        case WizardStep.Congratulations:
-          return WizardStep.Congratulations;
-        default:
-          return WizardStep.LegalName;
-      }
-    };
-    handleStepChange(previousStep(), TransitionDirection.SlideRight);
+    const currentIndex = stepOrder.indexOf(currentStep);
+    const previousStep =
+      currentIndex > 0 ? stepOrder[currentIndex - 1] : currentStep;
+    handleStepChange(previousStep, TransitionDirection.SlideRight);
   };
 
   const goForward = (): void => {
-    const nextStep = (): WizardStep => {
-      switch (currentStep) {
-        case WizardStep.LegalName:
-          return WizardStep.DateOfBirth;
-        case WizardStep.DateOfBirth:
-          return WizardStep.Address;
-        case WizardStep.Address:
-          return WizardStep.ReviewAndSubmit;
-        case WizardStep.ReviewAndSubmit:
-          return WizardStep.Congratulations;
-        default:
-          return WizardStep.LegalName;
-      }
-    };
-    handleStepChange(nextStep(), TransitionDirection.SlideLeft);
+    const currentIndex = stepOrder.indexOf(currentStep);
+    const nextStep =
+      currentIndex < stepOrder.length - 1
+        ? stepOrder[currentIndex + 1]
+        : currentStep;
+    handleStepChange(nextStep, TransitionDirection.SlideLeft);
   };
 
   const onAnimationEnd = (): void => {

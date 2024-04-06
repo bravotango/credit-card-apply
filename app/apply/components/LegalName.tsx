@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import strings from '../../strings.json';
 import { useGlobalContext } from '../../Context/store';
-import { StepState, WizardStep } from '@/app/models';
+import { StepState, WizardStepTitle } from '@/app/models';
 const LegalName = () => {
   const { payload, setPayload, setWizard } = useGlobalContext();
   const [legalFirstName, setLegalFirstName] = useState(
@@ -29,7 +29,7 @@ const LegalName = () => {
     setWizard((prevWizard) => ({
       ...prevWizard,
       steps: prevWizard.steps.map((step) =>
-        step.title === WizardStep.LegalName
+        step.title === WizardStepTitle.LegalName
           ? { ...step, state: StepState.Complete }
           : step
       ),

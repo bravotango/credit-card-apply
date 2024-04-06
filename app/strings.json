@@ -2,12 +2,12 @@
   "Shared": {
     "Button": {
       "GoBack": "Back",
-      "Submit": "Submit"
+      "Submit": "Validate"
     }
   },
   "GetStarted": {
-    "Heading": "See if you're pre-approved for card offers",
-    "SubHeading": "—with no harm to your credit—",
+    "Heading": "Apply for a credit card",
+    "SubHeading": "See if you're approved for card offers",
     "ButtonText": "Get started"
   },
   "LegalName": {
