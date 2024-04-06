@@ -4,7 +4,7 @@ import { StepState, WizardStepTitle } from '@/app/models';
 import strings from '../../strings.json';
 
 const ReviewAndSubmit = () => {
-  const { payload, setPayload, setWizard } = useGlobalContext();
+  const { payload, setWizard } = useGlobalContext();
   const [state] = useState(payload);
 
   const handleOnSubmit = (e: React.FormEvent) => {
