@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import Wizard from '../components/Wizard';
+import Wizard from '../components/wizard';
 import GlobalState from '../components/DisplayStore';
 import {
   Address,
