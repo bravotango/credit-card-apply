@@ -39,6 +39,7 @@ const DateOfBirth = () => {
           <label>
             {strings.DateOfBirth.Label.Dob}
             <input
+              className='dob'
               type='date'
               required
               title={strings.DateOfBirth.Validation.Dob}

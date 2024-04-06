@@ -5,12 +5,18 @@
   margin: $px-small 0;
   padding: 0 $px-small;
 }
-
+.stack main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
 .banner {
-  padding: $px-large;
   background-color: $primary-bg-color;
   color: $primary-text-color;
-
+  .wizard-container {
+    padding: $px-large;
+  }
   h1,
   h2 {
     max-width: fit-content;
@@ -28,7 +34,8 @@
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    max-width: 800px;
+    width: 90%;
+    max-width: $max-content-width;
     label {
       margin: 0;
       font-size: $font-size-small;
@@ -41,19 +48,19 @@
       color: #000;
       background-color: $primary-text-color;
       height: $input-height;
-      min-width: $input-width-small;
       padding: $px-small;
       border-radius: $border-radius;
     }
   }
 }
+
 .button,
 button {
   border: 1px solid $primary-text-color;
   border-radius: $border-radius;
   margin: $px-large auto;
   text-align: center;
-  min-width: $button-width;
+  max-width: $button-width;
   padding: $px-small;
   background-color: $primary-bg-color;
   color: $primary-text-color;
@@ -66,17 +73,12 @@ button {
   }
 }
 .container {
-  max-width: 800px;
+  max-width: $max-content-width;
   padding: 0 $px-small;
   margin: $px-small auto;
   align-items: center;
 }
-.stack {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-}
+
 .code-container {
   display: block;
   white-space: pre-wrap;
@@ -115,3 +117,4 @@ button {
   }
 }
 @import './components/legalName';
+@import './components/dateOfBirth';
