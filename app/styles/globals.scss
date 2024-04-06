@@ -1,0 +1,117 @@
+@import './reset';
+@import './variables';
+
+.logo {
+  margin: $px-small 0;
+  padding: 0 $px-small;
+}
+
+.banner {
+  padding: $px-large;
+  background-color: $primary-bg-color;
+  color: $primary-text-color;
+
+  h1,
+  h2 {
+    max-width: fit-content;
+    font-size: $font-size-large;
+    text-align: center;
+    margin: $px-large auto;
+  }
+
+  h2 {
+    font-size: calc($font-size-large * 0.75);
+  }
+
+  form {
+    padding: $px-large;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 800px;
+    label {
+      margin: 0;
+      font-size: $font-size-small;
+      display: flex;
+      flex-direction: column;
+    }
+    input {
+      font-size: 1rem;
+      margin: 0;
+      color: #000;
+      background-color: $primary-text-color;
+      height: $input-height;
+      min-width: $input-width-small;
+      padding: $px-small;
+      border-radius: $border-radius;
+    }
+  }
+}
+.button,
+button {
+  border: 1px solid $primary-text-color;
+  border-radius: $border-radius;
+  margin: $px-large auto;
+  text-align: center;
+  min-width: $button-width;
+  padding: $px-small;
+  background-color: $primary-bg-color;
+  color: $primary-text-color;
+  height: $button-height;
+  cursor: pointer;
+  &.disabled {
+    background-color: $disabled;
+    color: $primary-bg-color;
+    cursor: not-allowed;
+  }
+}
+.container {
+  max-width: 800px;
+  padding: 0 $px-small;
+  margin: $px-small auto;
+  align-items: center;
+}
+.stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.code-container {
+  display: block;
+  white-space: pre-wrap;
+  background-color: #f7f7f7;
+  padding: $px-large;
+  border-radius: $border-radius;
+  margin-bottom: $px-large;
+  font-family: 'Courier New', monospace;
+  line-height: calc($font-size-small * 2);
+  font-size: $font-size-small;
+}
+
+.slide-left {
+  animation: slideLeft 0.5s ease;
+}
+
+.slide-right {
+  animation: slideRight 0.5s ease;
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@import './components/legalName';

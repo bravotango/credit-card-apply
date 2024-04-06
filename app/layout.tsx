@@ -2,7 +2,7 @@ import { Catamaran } from 'next/font/google';
 import Image from 'next/image';
 import type { Metadata } from 'next';
 import { GlobalContextProvider } from './Context/store';
-import './globals.css';
+import './styles/globals.css';
 import Logo from '../public/nordstrom-logo.svg';
 import Head from 'next/head';
 

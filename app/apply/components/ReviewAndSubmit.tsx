@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useGlobalContext } from '../../Context/store';
-import { StepState, WizardStep } from '@/app/models';
+import { StepState, WizardStepTitle } from '@/app/models';
 import strings from '../../strings.json';
 
 const ReviewAndSubmit = () => {
@@ -12,7 +12,7 @@ const ReviewAndSubmit = () => {
     setWizard((prevWizard) => ({
       ...prevWizard,
       steps: prevWizard.steps.map((step) =>
-        step.title === WizardStep.ReviewAndSubmit
+        step.title === WizardStepTitle.ReviewAndSubmit
           ? { ...step, state: StepState.Complete }
           : step
       ),

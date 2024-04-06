@@ -10,13 +10,14 @@ export type Payload = {
   dateOfBirth: string;
 };
 
-export enum WizardStep {
+export enum WizardStepTitle {
   LegalName = 'LegalName',
   DateOfBirth = 'DateOfBirth',
   Address = 'Address',
   ReviewAndSubmit = 'ReviewAndSubmit',
   Congratulations = 'Congratulations',
 }
+
 export enum StepState {
   Complete = 'Complete',
   NotStarted = 'NotStarted',
@@ -30,7 +31,7 @@ export enum TransitionDirection {
 }
 
 export type Step = {
-  title: WizardStep;
+  title: WizardStepTitle;
   state: StepState;
   isFirstStep: boolean;
 };
@@ -38,6 +39,6 @@ export type Wizard = {
   steps: Step[];
   isComplete: boolean;
   isCloseModalOpen: boolean;
-  currentStep: WizardStep;
+  currentStep: WizardStepTitle;
   transitionDirection: TransitionDirection;
 };

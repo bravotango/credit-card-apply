@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import strings from '../../strings.json';
 import { useGlobalContext } from '@/app/Context/store';
-import { StepState, WizardStep } from '@/app/models';
+import { StepState, WizardStepTitle } from '@/app/models';
 import { stringReplace } from '@/app/utils';
 
 const DateOfBirth = () => {
@@ -19,7 +19,7 @@ const DateOfBirth = () => {
     setWizard((prevWizard) => ({
       ...prevWizard,
       steps: prevWizard.steps.map((step) =>
-        step.title === WizardStep.DateOfBirth
+        step.title === WizardStepTitle.DateOfBirth
           ? { ...step, state: StepState.Complete }
           : step
       ),

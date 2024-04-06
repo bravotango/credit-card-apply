@@ -1,8 +1,7 @@
 'use client';
 import React, { useState } from 'react';
-import './styles.css';
-import Wizard from '../components/wizard';
-import GlobalState from '../components/displayStore';
+import Wizard from '../components/Wizard';
+import GlobalState from '../components/DisplayStore';
 import {
   Address,
   Congratulations,
@@ -10,22 +9,22 @@ import {
   LegalName,
   ReviewAndSubmit,
 } from './components';
-import { WizardStep } from '../models';
+import { WizardStepTitle } from '../models';
 
 const Page: React.FC = () => {
-  const [currentStep, setCurrentStep] = useState<WizardStep>(
-    WizardStep.LegalName
+  const [currentStep, setCurrentStep] = useState<WizardStepTitle>(
+    WizardStepTitle.LegalName
   );
 
-  const wizardComponents: Record<WizardStep, React.ReactNode> = {
-    [WizardStep.LegalName]: <LegalName />,
-    [WizardStep.DateOfBirth]: <DateOfBirth />,
-    [WizardStep.Address]: <Address />,
-    [WizardStep.ReviewAndSubmit]: <ReviewAndSubmit />,
-    [WizardStep.Congratulations]: <Congratulations />,
-  };
+  const wizardSteps: WizardStepTitle[] = [
+    WizardStepTitle.LegalName,
+    WizardStepTitle.DateOfBirth,
+    WizardStepTitle.Address,
+    WizardStepTitle.ReviewAndSubmit,
+    WizardStepTitle.Congratulations,
+  ];
 
-  const handleStepChange = (newStep: WizardStep): void => {
+  const handleStepChange = (newStep: WizardStepTitle): void => {
     setCurrentStep(newStep);
   };
 
@@ -34,7 +33,14 @@ const Page: React.FC = () => {
       <div className='banner'>
         <Wizard
           currentStep={currentStep}
-          components={wizardComponents}
+          stepOrder={wizardSteps}
+          components={{
+            [WizardStepTitle.LegalName]: <LegalName />,
+            [WizardStepTitle.DateOfBirth]: <DateOfBirth />,
+            [WizardStepTitle.Address]: <Address />,
+            [WizardStepTitle.ReviewAndSubmit]: <ReviewAndSubmit />,
+            [WizardStepTitle.Congratulations]: <Congratulations />,
+          }}
           onStepChange={handleStepChange}
         />
       </div>

@@ -1,0 +1,174 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+html a,
+body a {
+  color: inherit;
+  text-decoration: none;
+}
+html img,
+body img {
+  max-width: 100%;
+  height: auto;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.logo {
+  margin: 8px 0;
+  padding: 0 8px;
+}
+
+.banner {
+  padding: 20px;
+  background-color: #000;
+  color: #fff;
+}
+.banner h1,
+.banner h2 {
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 20px auto;
+}
+.banner h2 {
+  font-size: 1.125rem;
+}
+.banner form {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 800px;
+}
+.banner form label {
+  margin: 0;
+  font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+}
+.banner form input {
+  font-size: 1rem;
+  margin: 0;
+  color: #000;
+  background-color: #fff;
+  height: 46px;
+  min-width: 60px;
+  padding: 8px;
+  border-radius: 0px;
+}
+
+.button,
+button {
+  border: 1px solid #fff;
+  border-radius: 0px;
+  margin: 20px auto;
+  text-align: center;
+  min-width: 200px;
+  padding: 8px;
+  background-color: #000;
+  color: #fff;
+  height: 40px;
+  cursor: pointer;
+}
+.button.disabled,
+button.disabled {
+  background-color: grey;
+  color: #000;
+  cursor: not-allowed;
+}
+
+.container {
+  max-width: 800px;
+  padding: 0 8px;
+  margin: 8px auto;
+  align-items: center;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.code-container {
+  display: block;
+  white-space: pre-wrap;
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 0px;
+  margin-bottom: 20px;
+  font-family: "Courier New", monospace;
+  line-height: 1.7rem;
+  font-size: 0.85rem;
+}
+
+.slide-left {
+  animation: slideLeft 0.5s ease;
+}
+
+.slide-right {
+  animation: slideRight 0.5s ease;
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes slideRight {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+form.legalName {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  /* Media query styles */
+}
+form.legalName .a {
+  grid-column: 1/4;
+}
+form.legalName .b {
+  grid-column: 4/6;
+}
+form.legalName .c {
+  grid-column: 1/6;
+}
+form.legalName button,
+form.legalName .button {
+  grid-column: 3/4;
+}
+@media screen and (min-width: 800px) {
+  form.legalName {
+    grid-template-columns: repeat(9, 1fr);
+    /* Default styles */
+  }
+  form.legalName .a {
+    grid-column: 1/5;
+  }
+  form.legalName .b {
+    grid-column: 5/6;
+  }
+  form.legalName .c {
+    grid-column: 6/10;
+  }
+  form.legalName button,
+  form.legalName .button {
+    grid-column: 5/6;
+  }
+}/*# sourceMappingURL=globals.css.map */
