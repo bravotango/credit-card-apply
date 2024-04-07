@@ -29,11 +29,7 @@ const Address = () => {
   return (
     <div className='stack'>
       <main>
-        <h1>
-          {stringReplace(strings.Address.Heading, {
-            name: payload.legalName.firstName,
-          })}
-        </h1>
+        <h1>{strings.Address.Heading}</h1>
         <h2>{strings.Address.SubHeading}</h2>
         <form onSubmit={handleOnSubmit}>
           <label>
@@ -43,6 +39,8 @@ const Address = () => {
               type='text'
               value={address}
               onChange={(e) => setAddress(e.target.value)}
+              autoComplete='address'
+              className='address'
             />
           </label>
           <button type='submit'>{strings.Shared.Button.Submit}</button>
