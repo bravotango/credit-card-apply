@@ -8,14 +8,31 @@
 .stack main {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
 }
+
 .banner {
   background-color: $primary-bg-color;
   color: $primary-text-color;
   .wizard-container {
     padding: $px-large;
+    min-height: $focus-height;
+    div {
+      display: flex;
+      justify-content: space-between;
+      .back,
+      .forward {
+        min-width: $button-width;
+      }
+
+      .back {
+        justify-self: flex-start;
+      }
+      .forward {
+        justify-self: flex-end;
+      }
+    }
   }
   h1,
   h2 {
@@ -30,26 +47,20 @@
   }
 
   form {
-    padding: $px-large;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    width: 90%;
     max-width: $max-content-width;
     label {
-      margin: 0;
       font-size: $font-size-small;
       display: flex;
       flex-direction: column;
     }
     input {
-      font-size: 1rem;
-      margin: 0;
       color: #000;
       background-color: $primary-text-color;
       height: $input-height;
       padding: $px-small;
-      border-radius: $border-radius;
     }
   }
 }
@@ -118,3 +129,14 @@ button {
 }
 @import './components/legalName';
 @import './components/dateOfBirth';
+
+/* Media query styles */
+@media screen and (max-width: 800px) {
+  .banner .wizard-container div {
+    flex-direction: column;
+    .back,
+    .forward {
+      align-content: center;
+    }
+  }
+}
