@@ -23,7 +23,7 @@ const ReviewAndSubmit = () => {
   return (
     <div className='stack'>
       <main className='review'>
-        <h1>You're ready to qualify.</h1>
+        <h1>You are ready to qualify.</h1>
         <h2>Please review your information.</h2>
         <div className='cards'>
           <p className='card'>
