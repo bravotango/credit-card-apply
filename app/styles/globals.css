@@ -21,14 +21,14 @@ body img {
 }
 
 .logo {
-  margin: 8px 0;
-  padding: 0 8px;
+  margin: 4px 0;
+  padding: 0 4px;
 }
 
 .stack main {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -37,7 +37,22 @@ body img {
   color: #fff;
 }
 .banner .wizard-container {
-  padding: 20px;
+  padding: 10px;
+  min-height: 400px;
+}
+.banner .wizard-container div {
+  display: flex;
+  justify-content: space-between;
+}
+.banner .wizard-container div .back,
+.banner .wizard-container div .forward {
+  min-width: 200px;
+}
+.banner .wizard-container div .back {
+  justify-self: flex-start;
+}
+.banner .wizard-container div .forward {
+  justify-self: flex-end;
 }
 .banner h1,
 .banner h2 {
@@ -45,43 +60,37 @@ body img {
   max-width: fit-content;
   font-size: 1.5rem;
   text-align: center;
-  margin: 20px auto;
+  margin: 10px auto;
 }
 .banner h2 {
   font-size: 1.125rem;
 }
 .banner form {
-  padding: 20px;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  width: 90%;
   max-width: 800px;
 }
 .banner form label {
-  margin: 0;
   font-size: 0.85rem;
   display: flex;
   flex-direction: column;
 }
 .banner form input {
-  font-size: 1rem;
-  margin: 0;
   color: #000;
   background-color: #fff;
   height: 46px;
-  padding: 8px;
-  border-radius: 0px;
+  padding: 4px;
 }
 
 .button,
 button {
   border: 1px solid #fff;
   border-radius: 0px;
-  margin: 20px auto;
+  margin: 10px auto;
   text-align: center;
   max-width: 200px;
-  padding: 8px;
+  padding: 4px;
   background-color: #000;
   color: #fff;
   height: 40px;
@@ -96,8 +105,8 @@ button.disabled {
 
 .container {
   max-width: 800px;
-  padding: 0 8px;
-  margin: 8px auto;
+  padding: 0 4px;
+  margin: 4px auto;
   align-items: center;
 }
 
@@ -105,9 +114,9 @@ button.disabled {
   display: block;
   white-space: pre-wrap;
   background-color: #f7f7f7;
-  padding: 20px;
+  padding: 10px;
   border-radius: 0px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-family: "Courier New", monospace;
   line-height: 1.7rem;
   font-size: 0.85rem;
@@ -172,5 +181,20 @@ form.legalName .button {
   form.legalName button,
   form.legalName .button {
     grid-column: 5/6;
+  }
+}
+
+.dob {
+  min-width: 260px;
+}
+
+/* Media query styles */
+@media screen and (max-width: 800px) {
+  .banner .wizard-container div {
+    flex-direction: column;
+  }
+  .banner .wizard-container div .back,
+  .banner .wizard-container div .forward {
+    align-content: center;
   }
 }/*# sourceMappingURL=globals.css.map */

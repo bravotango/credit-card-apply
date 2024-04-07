@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { TransitionDirection, WizardStepTitle } from '../models';
 import { useGlobalContext } from '../Context/store';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 type WizardProps = {
   currentStep: WizardStepTitle;
@@ -57,10 +58,18 @@ const Wizard: React.FC<WizardProps> = ({
       className={`wizard-container ${transitionDirection}`}
       onAnimationEnd={onAnimationEnd}
     >
-      <div className='wizard-content'>
-        <button onClick={goBack}>Back</button>
-        {components[currentStep]}
-        <button onClick={goForward}>Forward</button>
+      <div>
+        <div>
+          <button className='back' onClick={goBack}>
+            <FaArrowLeft /> Back
+          </button>
+        </div>
+        <div>{components[currentStep]}</div>
+        <div>
+          <button className='forward' onClick={goForward}>
+            Forward <FaArrowRight />
+          </button>
+        </div>
       </div>
     </div>
   );
