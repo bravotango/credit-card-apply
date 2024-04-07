@@ -1,0 +1,17 @@
+.cards {
+  //display: flex;
+  .card {
+    .heading {
+      width: 100%;
+      font-weight: bolder;
+    }
+    .keyValue {
+      padding-left: $px-large;
+      border-left: 1px solid $success;
+      display: grid;
+      justify-content: space-between;
+      grid-template-columns: repeat(2, 1fr);
+      gap: $px-small;
+    }
+  }
+}

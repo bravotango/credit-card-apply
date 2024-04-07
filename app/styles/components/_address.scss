@@ -1,0 +1,10 @@
+.address {
+  width: $input-width;
+}
+
+/* Media query */
+@media screen and (min-width: 800px) {
+  .address {
+    width: $input-width-large;
+  }
+}

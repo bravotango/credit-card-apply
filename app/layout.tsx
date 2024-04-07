@@ -6,7 +6,7 @@ import './styles/globals.css';
 import Logo from '../public/nordstrom-logo.svg';
 import Head from 'next/head';
 
-const catamaran = Catamaran({ subsets: ['latin'], weight: '600' });
+const catamaran = Catamaran({ subsets: ['latin'], weight: ['300', '600'] });
 
 export const metadata: Metadata = {
   title: 'Credit card application',

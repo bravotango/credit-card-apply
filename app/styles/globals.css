@@ -25,6 +25,10 @@ body img {
   padding: 0 4px;
 }
 
+.success {
+  color: green;
+}
+
 .stack main {
   display: flex;
   flex-direction: column;
@@ -38,20 +42,20 @@ body img {
 }
 .banner .wizard-container {
   padding: 10px;
-  min-height: 400px;
+  min-height: 360px;
 }
-.banner .wizard-container div {
+.banner .wizard-container > div {
   display: flex;
   justify-content: space-between;
 }
-.banner .wizard-container div .back,
-.banner .wizard-container div .forward {
+.banner .wizard-container > div .back,
+.banner .wizard-container > div .forward {
   min-width: 200px;
 }
-.banner .wizard-container div .back {
+.banner .wizard-container > div .back {
   justify-self: flex-start;
 }
-.banner .wizard-container div .forward {
+.banner .wizard-container > div .forward {
   justify-self: flex-end;
 }
 .banner h1,
@@ -72,15 +76,17 @@ body img {
   max-width: 800px;
 }
 .banner form label {
-  font-size: 0.85rem;
+  font-size: 1rem;
   display: flex;
   flex-direction: column;
 }
 .banner form input {
+  font-size: 1rem;
   color: #000;
   background-color: #fff;
   height: 46px;
   padding: 4px;
+  font-family: "Courier New", monospace;
 }
 
 .button,
@@ -118,8 +124,8 @@ button.disabled {
   border-radius: 0px;
   margin-bottom: 10px;
   font-family: "Courier New", monospace;
-  line-height: 1.7rem;
-  font-size: 0.85rem;
+  line-height: 2rem;
+  font-size: 1rem;
 }
 
 .slide-left {
@@ -188,6 +194,29 @@ form.legalName .button {
   min-width: 260px;
 }
 
+.cards .card .heading {
+  width: 100%;
+  font-weight: bolder;
+}
+.cards .card .keyValue {
+  padding-left: 10px;
+  border-left: 1px solid green;
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px;
+}
+
+.address {
+  width: 260px;
+}
+
+/* Media query */
+@media screen and (min-width: 800px) {
+  .address {
+    width: 400px;
+  }
+}
 /* Media query styles */
 @media screen and (max-width: 800px) {
   .banner .wizard-container div {

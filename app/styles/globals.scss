@@ -5,6 +5,9 @@
   margin: $px-small 0;
   padding: 0 $px-small;
 }
+.success {
+  color: green;
+}
 .stack main {
   display: flex;
   flex-direction: column;
@@ -18,7 +21,7 @@
   .wizard-container {
     padding: $px-large;
     min-height: $focus-height;
-    div {
+    > div {
       display: flex;
       justify-content: space-between;
       .back,
@@ -57,10 +60,12 @@
       flex-direction: column;
     }
     input {
+      font-size: $font-size-normal;
       color: #000;
       background-color: $primary-text-color;
       height: $input-height;
       padding: $px-small;
+      font-family: 'Courier New', monospace;
     }
   }
 }
@@ -127,8 +132,7 @@ button {
     transform: translateX(0);
   }
 }
-@import './components/legalName';
-@import './components/dateOfBirth';
+@import './components/';
 
 /* Media query styles */
 @media screen and (max-width: 800px) {

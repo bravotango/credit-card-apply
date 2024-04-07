@@ -36,7 +36,7 @@
     }
   },
   "Address": {
-    "Heading": "Now let's validate your address {name}. ",
+    "Heading": "Now let's validate your address. ",
     "SubHeading": "Let us know where you live so we can verify your identity.",
     "Label": {
       "ResidentialAddress": "Residential address (P.O. Box is not valid)",
