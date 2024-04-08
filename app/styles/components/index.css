@@ -1,0 +1,65 @@
+form.legalName {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  /* Media query styles */
+}
+form.legalName .a {
+  grid-column: 1/4;
+}
+form.legalName .b {
+  grid-column: 4/6;
+}
+form.legalName .c {
+  grid-column: 1/6;
+}
+form.legalName button,
+form.legalName .button {
+  grid-column: 2/5;
+}
+@media screen and (min-width: 800px) {
+  form.legalName {
+    grid-template-columns: repeat(9, 1fr);
+    /* Default styles */
+  }
+  form.legalName .a {
+    grid-column: 1/5;
+  }
+  form.legalName .b {
+    grid-column: 5/6;
+  }
+  form.legalName .c {
+    grid-column: 6/10;
+  }
+  form.legalName button,
+  form.legalName .button {
+    grid-column: 5/6;
+  }
+}
+
+.dob {
+  min-width: 260px;
+}
+
+.cards .card .heading {
+  width: 100%;
+  font-weight: bolder;
+}
+.cards .card .keyValue {
+  padding-left: 10px;
+  border-left: 1px solid green;
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px;
+}
+
+.address {
+  width: 260px;
+}
+
+/* Media query */
+@media screen and (min-width: 800px) {
+  .address {
+    width: 400px;
+  }
+}/*# sourceMappingURL=index.css.map */

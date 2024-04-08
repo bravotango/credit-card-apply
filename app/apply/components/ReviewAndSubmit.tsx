@@ -35,7 +35,7 @@ const ReviewAndSubmit = () => {
               <span>{state.legalName.firstName}</span>
               <span>MI</span>
               <span>{state.legalName.middleInitial}</span>
-              <span>Last name</span>
+              <span>Last name - strings</span>
               <span>{state.legalName.lastName}</span>
             </span>
           </p>
