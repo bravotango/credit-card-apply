@@ -21,7 +21,7 @@ body img {
 }
 
 .logo {
-  margin: 4px 0;
+  margin: 10px 0;
   padding: 0 4px;
 }
 
@@ -76,7 +76,6 @@ body img {
   max-width: 800px;
 }
 .banner form label {
-  font-size: 1rem;
   display: flex;
   flex-direction: column;
 }

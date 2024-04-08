@@ -2,7 +2,7 @@
 @import './variables';
 
 .logo {
-  margin: $px-small 0;
+  margin: $px-large 0;
   padding: 0 $px-small;
 }
 .success {
@@ -55,7 +55,6 @@
     margin: 0 auto;
     max-width: $max-content-width;
     label {
-      font-size: $font-size-small;
       display: flex;
       flex-direction: column;
     }
