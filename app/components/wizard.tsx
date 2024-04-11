@@ -37,7 +37,7 @@ const Wizard: React.FC<WizardProps> = ({
     const currentIndex = stepOrder.indexOf(currentStep);
     const previousStep =
       currentIndex > 0 ? stepOrder[currentIndex - 1] : currentStep;
-    currentStep !== previousStep && // stop from moving back - we are at the beginning
+    currentStep !== previousStep &&
       handleStepChange(previousStep, TransitionDirection.SlideRight);
   };
 
@@ -47,7 +47,7 @@ const Wizard: React.FC<WizardProps> = ({
       currentIndex < stepOrder.length - 1
         ? stepOrder[currentIndex + 1]
         : currentStep;
-    currentStep !== nextStep && // stop from moving forward - we are at the end
+    currentStep !== nextStep &&
       handleStepChange(nextStep, TransitionDirection.SlideLeft);
   };
 
@@ -62,16 +62,35 @@ const Wizard: React.FC<WizardProps> = ({
     >
       <div>
         <div>
-          <button className='back' onClick={goBack}>
+          <button
+            className='back'
+            onClick={goBack}
+            disabled={stepOrder.indexOf(currentStep) === 0}
+          >
             <FaArrowLeft /> Back
           </button>
         </div>
         <div>{components[currentStep]}</div>
         <div>
-          <button className='forward' onClick={goForward}>
+          <button
+            className='forward'
+            onClick={goForward}
+            disabled={stepOrder.indexOf(currentStep) === stepOrder.length - 1}
+          >
             Forward <FaArrowRight />
           </button>
         </div>
+      </div>
+      <div className='step-indicator'>
+        {/* Step Indicator */}
+        {stepOrder.map((step, index) => (
+          <div
+            key={step}
+            className={`step ${currentStep === step ? 'active' : ''}`}
+          >
+            {index + 1}
+          </div>
+        ))}
       </div>
     </div>
   );
