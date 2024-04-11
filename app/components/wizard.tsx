@@ -37,7 +37,8 @@ const Wizard: React.FC<WizardProps> = ({
     const currentIndex = stepOrder.indexOf(currentStep);
     const previousStep =
       currentIndex > 0 ? stepOrder[currentIndex - 1] : currentStep;
-    handleStepChange(previousStep, TransitionDirection.SlideRight);
+    currentStep !== previousStep && // stop from moving back - we are at the beginning
+      handleStepChange(previousStep, TransitionDirection.SlideRight);
   };
 
   const goForward = (): void => {
@@ -46,7 +47,8 @@ const Wizard: React.FC<WizardProps> = ({
       currentIndex < stepOrder.length - 1
         ? stepOrder[currentIndex + 1]
         : currentStep;
-    handleStepChange(nextStep, TransitionDirection.SlideLeft);
+    currentStep !== nextStep && // stop from moving forward - we are at the end
+      handleStepChange(nextStep, TransitionDirection.SlideLeft);
   };
 
   const onAnimationEnd = (): void => {

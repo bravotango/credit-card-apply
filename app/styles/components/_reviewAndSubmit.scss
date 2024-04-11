@@ -1,9 +1,15 @@
 .cards {
   //display: flex;
   .card {
-    .heading {
-      width: 100%;
-      font-weight: bolder;
+    .success {
+      .heading {
+        color: #fff;
+        width: 100%;
+        font-weight: bolder;
+      }
+      .icon {
+        background-color: green;
+      }
     }
     .keyValue {
       padding-left: $px-large;

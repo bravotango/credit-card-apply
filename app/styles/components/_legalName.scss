@@ -2,11 +2,11 @@ form.legalName {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   .a {
-    grid-column: 1/4;
+    grid-column: 1/5;
   }
 
   .b {
-    grid-column: 4/6;
+    grid-column: 5/6;
   }
 
   .c {
@@ -15,7 +15,7 @@ form.legalName {
 
   button,
   .button {
-    grid-column: 2/5;
+    grid-column: 3/5;
   }
 
   /* Media query styles */

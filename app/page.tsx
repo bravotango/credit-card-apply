@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const page = () => {
   return (
-    <div className='banner'>
+    <div>
       <main className='container stack'>
         <h1>{strings.GetStarted.Heading}</h1>
         <h2>{strings.GetStarted.SubHeading}</h2>
