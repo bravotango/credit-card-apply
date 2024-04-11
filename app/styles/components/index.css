@@ -4,35 +4,36 @@ form.legalName {
   /* Media query styles */
 }
 form.legalName .a {
-  grid-column: 1/5;
+  grid-column: 1/span 4;
 }
 form.legalName .b {
-  grid-column: 5/6;
+  grid-column: 5/span 1;
 }
 form.legalName .c {
-  grid-column: 1/6;
+  grid-column: 1/span 5;
 }
 form.legalName button,
 form.legalName .button {
-  grid-column: 3/5;
+  grid-column: 1/span 6;
+  justify-self: center;
 }
 @media screen and (min-width: 800px) {
   form.legalName {
     grid-template-columns: repeat(9, 1fr);
-    /* Default styles */
   }
   form.legalName .a {
-    grid-column: 1/5;
+    grid-column: 1/span 4;
   }
   form.legalName .b {
-    grid-column: 5/6;
+    grid-column: 5/span 1;
+    max-width: 100px;
   }
   form.legalName .c {
-    grid-column: 6/10;
+    grid-column: 6/span 4;
   }
   form.legalName button,
   form.legalName .button {
-    grid-column: 5/6;
+    grid-column: 5/span 1;
   }
 }
 

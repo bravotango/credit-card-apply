@@ -1,42 +1,45 @@
 form.legalName {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+
   .a {
-    grid-column: 1/5;
+    grid-column: 1 / span 4;
   }
 
   .b {
-    grid-column: 5/6;
+    grid-column: 5 / span 1;
   }
 
   .c {
-    grid-column: 1/6;
+    grid-column: 1 / span 5;
   }
 
   button,
   .button {
-    grid-column: 3/5;
+    grid-column: 1 / span 6;
+    justify-self: center;
   }
 
   /* Media query styles */
   @media screen and (min-width: 800px) {
     grid-template-columns: repeat(9, 1fr);
 
-    /* Default styles */
     .a {
-      grid-column: 1/5;
+      grid-column: 1 / span 4;
     }
 
     .b {
-      grid-column: 5/6;
+      grid-column: 5 / span 1;
+      max-width: $input-width-min;
     }
 
     .c {
-      grid-column: 6/10;
+      grid-column: 6 / span 4;
     }
+
     button,
     .button {
-      grid-column: 5/6;
+      grid-column: 5 / span 1;
     }
   }
 }
