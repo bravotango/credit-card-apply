@@ -134,6 +134,24 @@ button.disabled {
   animation: slideRight 0.75s ease;
 }
 
+.banner .wizard-container .step-indicator {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; /* Center vertically */
+}
+.banner .wizard-container .step-indicator .step {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.banner .wizard-container .step-indicator .step.active {
+  background: green;
+}
+
 @keyframes slideLeft {
   from {
     transform: translateX(100%);
@@ -222,11 +240,11 @@ form.legalName .button {
 }
 /* Media query styles */
 @media screen and (max-width: 800px) {
-  .banner .wizard-container div {
+  .banner .wizard-container > div {
     flex-direction: column;
   }
-  .banner .wizard-container div .back,
-  .banner .wizard-container div .forward {
+  .banner .wizard-container > div .back,
+  .banner .wizard-container > div .forward {
     align-content: center;
   }
 }/*# sourceMappingURL=globals.css.map */

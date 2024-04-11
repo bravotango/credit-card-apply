@@ -113,6 +113,24 @@ button {
   animation: slideRight 0.75s ease;
 }
 
+.banner .wizard-container .step-indicator {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; /* Center vertically */
+  .step {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &.active {
+      background: $success;
+    }
+  }
+}
+
 @keyframes slideLeft {
   from {
     transform: translateX(100%);
@@ -134,7 +152,7 @@ button {
 
 /* Media query styles */
 @media screen and (max-width: 800px) {
-  .banner .wizard-container div {
+  .banner .wizard-container > div {
     flex-direction: column;
     .back,
     .forward {

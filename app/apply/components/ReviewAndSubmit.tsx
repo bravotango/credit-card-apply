@@ -37,7 +37,7 @@ const ReviewAndSubmit = () => {
         </span>
         <span className='keyValue'>
           <span>First name</span>
-          <span>{state.legalName.firstName}</span>
+          <span>{state.legalName.firstName} dg fg</span>
           <span>MI</span>
           <span>{state.legalName.middleInitial}</span>
           <span>Last name - strings</span>
