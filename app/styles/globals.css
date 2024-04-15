@@ -149,7 +149,7 @@ button.disabled {
   align-items: center;
 }
 .banner .wizard-container .step-indicator .step.active {
-  background: green;
+  background: rgb(0, 83, 167);
 }
 
 @keyframes slideLeft {
@@ -211,12 +211,16 @@ form.legalName .button {
   min-width: 260px;
 }
 
-.cards .card .success .heading {
+.cards .card .heading {
   color: #fff;
   width: 100%;
   font-weight: bolder;
 }
-.cards .card .success .icon {
+.cards .card .icon {
+  background-color: green;
+  margin-right: 4px;
+}
+.cards .card.success {
   background-color: green;
 }
 .cards .card .keyValue {

@@ -6,7 +6,7 @@
   padding: 0 $px-small;
 }
 .success {
-  color: green;
+  color: $color-success;
 }
 .stack main {
   display: flex;
@@ -126,7 +126,7 @@ button {
     justify-content: center;
     align-items: center;
     &.active {
-      background: $success;
+      background: $color-info;
     }
   }
 }

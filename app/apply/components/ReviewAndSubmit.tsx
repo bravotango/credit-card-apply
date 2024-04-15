@@ -3,16 +3,16 @@ import { useGlobalContext } from '../../Context/store';
 import { StepState, WizardStepTitle } from '@/app/models';
 import strings from '../../strings.json';
 import { FaCheckCircle } from 'react-icons/fa';
-import LegalName from './LegalName';
 
 const ReviewAndSubmit = () => {
   const { payload, setWizard, wizard } = useGlobalContext();
   const [state] = useState(payload);
 
   const getStepByWizardStepTitle = (title: WizardStepTitle) => {
-    return wizard.steps.find((step) => {
-      step.title === title;
+    const theStep = wizard.steps.find((step) => {
+      return step.title === title;
     });
+    return theStep;
   };
 
   const handleOnSubmit = (e: React.FormEvent) => {
@@ -27,17 +27,19 @@ const ReviewAndSubmit = () => {
     }));
   };
 
-  const card = (WizardStepTitle: WizardStepTitle) => {
-    const step = getStepByWizardStepTitle(WizardStepTitle);
+  const card = (title: WizardStepTitle) => {
+    const step = getStepByWizardStepTitle(title);
+    const stateCssClass =
+      step?.state === StepState.Complete ? 'success' : 'error';
     return step ? (
-      <p className='card success'>
+      <p className={`card ${stateCssClass}`}>
         <span className='heading'>
           <FaCheckCircle className='icon' />
           {step.title}
         </span>
         <span className='keyValue'>
           <span>First name</span>
-          <span>{state.legalName.firstName} dg fg</span>
+          <span>{state.legalName.firstName}</span>
           <span>MI</span>
           <span>{state.legalName.middleInitial}</span>
           <span>Last name - strings</span>
