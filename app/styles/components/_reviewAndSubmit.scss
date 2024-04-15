@@ -1,19 +1,21 @@
 .cards {
   //display: flex;
   .card {
-    .success {
-      .heading {
-        color: #fff;
-        width: 100%;
-        font-weight: bolder;
-      }
-      .icon {
-        background-color: green;
-      }
+    .heading {
+      color: #fff;
+      width: 100%;
+      font-weight: bolder;
+    }
+    .icon {
+      background-color: $color-success;
+      margin-right: $px-small;
+    }
+    &.success {
+      background-color: $color-success;
     }
     .keyValue {
       padding-left: $px-large;
-      border-left: 1px solid $success;
+      border-left: 1px solid $color-success;
       display: grid;
       justify-content: space-between;
       grid-template-columns: repeat(2, 1fr);
