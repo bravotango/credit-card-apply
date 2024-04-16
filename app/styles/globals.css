@@ -20,6 +20,62 @@ body img {
   box-sizing: border-box;
 }
 
+body {
+  overflow: hidden;
+}
+
+.lightTheMatch > .before,
+.lightTheMatch > .after {
+  display: flex;
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 0%;
+  box-shadow: 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff;
+  animation: 1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards;
+}
+
+.lightTheMatch > .after {
+  animation-delay: 1.25s, 1.25s, 1.25s;
+  animation-duration: 1.25s, 1.25s, 6.25s;
+}
+@keyframes bang {
+  to {
+    box-shadow: -352px -612px hsl(227, 100%, 50%), 119px -415px hsl(157, 100%, 50%), 594px -804px hsl(195, 100%, 50%), 499px -944px hsl(76, 100%, 50%), -425px -898px hsl(41, 100%, 50%), 255px 6px hsl(113, 100%, 50%), 325px -169px hsl(129, 100%, 50%), 234px -631px hsl(335, 100%, 50%), 99px -575px hsl(284, 100%, 50%), 627px -591px hsl(128, 100%, 50%), -544px -554px hsl(87, 100%, 50%);
+  }
+}
+@keyframes gravity {
+  to {
+    transform: translateY(200px);
+    -moz-transform: translateY(200px);
+    -webkit-transform: translateY(200px);
+    -o-transform: translateY(200px);
+    -ms-transform: translateY(200px);
+    opacity: 0;
+  }
+}
+@keyframes position {
+  0%, 19.9% {
+    margin-top: 10%;
+    margin-left: 0;
+  }
+  20%, 39.9% {
+    margin-top: 10%;
+    margin-left: -30%;
+  }
+  40%, 59.9% {
+    margin-top: 20%;
+    margin-left: 70%;
+  }
+  60%, 79.9% {
+    margin-top: 30%;
+    margin-left: 20%;
+  }
+  80%, 99.9% {
+    margin-top: 30%;
+    margin-left: 80%;
+  }
+}
 .logo {
   margin: 10px 0;
   padding: 0 4px;
@@ -51,16 +107,6 @@ body img {
   display: flex;
   justify-content: space-between;
 }
-.banner .wizard-container > div .back,
-.banner .wizard-container > div .forward {
-  min-width: 200px;
-}
-.banner .wizard-container > div .back {
-  justify-self: flex-start;
-}
-.banner .wizard-container > div .forward {
-  justify-self: flex-end;
-}
 .banner h1,
 .banner h2 {
   max-width: -moz-fit-content;
@@ -76,7 +122,7 @@ body img {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  max-width: 800px;
+  max-width: 85%;
 }
 .banner form label {
   display: flex;
@@ -93,12 +139,11 @@ body img {
 
 .button,
 button {
-  border: 1px solid #fff;
   border-radius: 0px;
   margin: 10px auto;
   text-align: center;
   max-width: 200px;
-  padding: 4px;
+  padding: 10px;
   background-color: #000;
   color: #fff;
   height: 40px;
@@ -112,7 +157,7 @@ button.disabled {
 }
 
 .container {
-  max-width: 800px;
+  max-width: 85%;
   padding: 0 4px;
   margin: 4px auto;
   align-items: center;
