@@ -1,6 +1,6 @@
 @import './reset';
 @import './variables';
-
+@import './firework';
 .logo {
   margin: $px-large 0;
   padding: 0 $px-small;
@@ -27,17 +27,6 @@
     > div {
       display: flex;
       justify-content: space-between;
-      .back,
-      .forward {
-        min-width: $button-width;
-      }
-
-      .back {
-        justify-self: flex-start;
-      }
-      .forward {
-        justify-self: flex-end;
-      }
     }
   }
   h1,
@@ -74,12 +63,11 @@
 
 .button,
 button {
-  border: 1px solid $primary-text-color;
   border-radius: $border-radius;
   margin: $px-large auto;
   text-align: center;
   max-width: $button-width;
-  padding: $px-small;
+  padding: $px-large;
   background-color: $primary-bg-color;
   color: $primary-text-color;
   height: $button-height;

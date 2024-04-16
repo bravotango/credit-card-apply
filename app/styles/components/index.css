@@ -41,20 +41,24 @@ form.legalName .button {
   min-width: 260px;
 }
 
+.cards {
+  border: 1px solid inherit;
+  padding: 4px;
+}
 .cards .card .heading {
   color: #fff;
-  width: 100%;
   font-weight: bolder;
 }
 .cards .card .icon {
-  background-color: green;
-  margin-right: 4px;
+  color: green;
+  margin-right: 10px;
 }
 .cards .card.success {
-  background-color: green;
+  color: green;
 }
 .cards .card .keyValue {
   padding-left: 10px;
+  margin-left: 8px;
   border-left: 1px solid green;
   display: grid;
   justify-content: space-between;

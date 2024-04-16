@@ -26,26 +26,17 @@ const ReviewAndSubmit = () => {
       ),
     }));
   };
-
   const card = (title: WizardStepTitle) => {
     const step = getStepByWizardStepTitle(title);
     const stateCssClass =
       step?.state === StepState.Complete ? 'success' : 'error';
     return step ? (
-      <p className={`card ${stateCssClass}`}>
+      <div className={`card ${stateCssClass}`}>
         <span className='heading'>
           <FaCheckCircle className='icon' />
           {step.title}
         </span>
-        <span className='keyValue'>
-          <span>First name</span>
-          <span>{state.legalName.firstName}</span>
-          <span>MI</span>
-          <span>{state.legalName.middleInitial}</span>
-          <span>Last name - strings</span>
-          <span>{state.legalName.lastName}</span>
-        </span>
-      </p>
+      </div>
     ) : (
       <></>
     );
@@ -54,28 +45,16 @@ const ReviewAndSubmit = () => {
   return (
     <div className='stack'>
       <main className='review'>
-        <h1>You are ready to qualify.</h1>
+        <h1>{strings.ReviewAndSubmit.Heading}</h1>
         <h2>Please review your information.</h2>
         <div className='cards'>
           {card(WizardStepTitle.LegalName)}
-
-          <p>
-            {strings.LegalName.Label.LastName}: {state.legalName.lastName}
-          </p>
-          <p>
-            {strings.LegalName.Label.MiddleInitial}:
-            {state.legalName.middleInitial}
-          </p>
-          <p>
-            {strings.Address.Label.ResidentialAddress}: {state.address}
-          </p>
-          <p>
-            {strings.DateOfBirth.Label.Dob}: {state.dateOfBirth}
-          </p>
+          {card(WizardStepTitle.DateOfBirth)}
+          {card(WizardStepTitle.Address)}
+          <form onSubmit={handleOnSubmit}>
+            <button type='submit'>{strings.Shared.Button.Submit}</button>
+          </form>
         </div>
-        <form onSubmit={handleOnSubmit}>
-          <button type='submit'>{strings.Shared.Button.Submit}</button>
-        </form>
       </main>
     </div>
   );

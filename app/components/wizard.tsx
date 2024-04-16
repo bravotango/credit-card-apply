@@ -63,7 +63,6 @@ const Wizard: React.FC<WizardProps> = ({
       <div>
         <div>
           <button
-            className='back'
             onClick={goBack}
             disabled={stepOrder.indexOf(currentStep) === 0}
           >
@@ -73,7 +72,6 @@ const Wizard: React.FC<WizardProps> = ({
         <div>{components[currentStep]}</div>
         <div>
           <button
-            className='forward'
             onClick={goForward}
             disabled={stepOrder.indexOf(currentStep) === stepOrder.length - 1}
           >
