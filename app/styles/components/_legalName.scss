@@ -7,6 +7,7 @@ form.legalName {
   }
 
   .b {
+    max-width: $input-width-min;
     grid-column: 5 / span 1;
   }
 
@@ -30,7 +31,6 @@ form.legalName {
 
     .b {
       grid-column: 5 / span 1;
-      max-width: $input-width-min;
     }
 
     .c {
