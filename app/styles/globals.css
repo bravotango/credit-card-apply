@@ -41,6 +41,9 @@ body img {
   color: #fff;
 }
 .banner .wizard-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 10px;
   min-height: 360px;
 }
