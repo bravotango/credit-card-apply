@@ -7,6 +7,7 @@ form.legalName .a {
   grid-column: 1/span 4;
 }
 form.legalName .b {
+  max-width: 100px;
   grid-column: 5/span 1;
 }
 form.legalName .c {
@@ -26,7 +27,6 @@ form.legalName .button {
   }
   form.legalName .b {
     grid-column: 5/span 1;
-    max-width: 100px;
   }
   form.legalName .c {
     grid-column: 6/span 4;
