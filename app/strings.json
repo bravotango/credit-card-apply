@@ -45,5 +45,8 @@
     "Validation": {
       "ResidentialAddress": "Please enter your address"
     }
+  },
+  "ReviewAndSubmit": {
+    "Heading": "You are ready to qualify."
   }
 }

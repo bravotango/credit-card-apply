@@ -1,20 +1,22 @@
 .cards {
-  //display: flex;
+  border: 1px solid inherit;
+  padding: $px-small;
   .card {
     .heading {
       color: #fff;
-      width: 100%;
+
       font-weight: bolder;
     }
     .icon {
-      background-color: $color-success;
-      margin-right: $px-small;
+      color: $color-success;
+      margin-right: $px-large;
     }
     &.success {
-      background-color: $color-success;
+      color: $color-success;
     }
     .keyValue {
       padding-left: $px-large;
+      margin-left: $px-small * 2;
       border-left: 1px solid $color-success;
       display: grid;
       justify-content: space-between;

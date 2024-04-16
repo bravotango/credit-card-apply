@@ -41,7 +41,7 @@ body {
 }
 @keyframes bang {
   to {
-    box-shadow: -352px -612px hsl(227, 100%, 50%), 119px -415px hsl(157, 100%, 50%), 594px -804px hsl(195, 100%, 50%), 499px -944px hsl(76, 100%, 50%), -425px -898px hsl(41, 100%, 50%), 255px 6px hsl(113, 100%, 50%), 325px -169px hsl(129, 100%, 50%), 234px -631px hsl(335, 100%, 50%), 99px -575px hsl(284, 100%, 50%), 627px -591px hsl(128, 100%, 50%), -544px -554px hsl(87, 100%, 50%);
+    box-shadow: -565px -145px hsl(56, 100%, 50%), 391px -715px hsl(266, 100%, 50%), -631px -94px hsl(230, 100%, 50%), -749px -830px hsl(268, 100%, 50%), -19px -673px hsl(158, 100%, 50%), 179px -450px hsl(290, 100%, 50%), -575px -105px hsl(178, 100%, 50%), 620px -25px hsl(133, 100%, 50%), 343px -425px hsl(323, 100%, 50%), -699px 237px hsl(281, 100%, 50%), -461px -379px hsl(308, 100%, 50%);
   }
 }
 @keyframes gravity {
@@ -260,20 +260,24 @@ form.legalName .button {
   min-width: 260px;
 }
 
+.cards {
+  border: 1px solid inherit;
+  padding: 4px;
+}
 .cards .card .heading {
   color: #fff;
-  width: 100%;
   font-weight: bolder;
 }
 .cards .card .icon {
-  background-color: green;
-  margin-right: 4px;
+  color: green;
+  margin-right: 10px;
 }
 .cards .card.success {
-  background-color: green;
+  color: green;
 }
 .cards .card .keyValue {
   padding-left: 10px;
+  margin-left: 8px;
   border-left: 1px solid green;
   display: grid;
   justify-content: space-between;

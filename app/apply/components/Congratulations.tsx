@@ -5,7 +5,7 @@ const Congratulations = () => {
     const firework = document.querySelector('.firework');
 
     let count = 0; // Initialize a counter for sparkles
-    const maxSparkles = 3; // Set the maximum number of sparkles
+    const maxSparkles = 1; // Set the maximum number of sparkles
 
     // Function to handle sparkle animation
     function handleSparkle() {

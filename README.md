@@ -1,10 +1,10 @@
 # Credit Card Apply Wizard
 
+
+
 ## Description
   
   The Credit Card Apply Wizard is a user-friendly web application designed to guide users through the process of applying for a credit card. Utilizing a wizard flow, the application breaks down the application process into easy-to-follow steps, presented as slides.
-
-## Built-in Features
 
 This application comes with built-in HTML5 validation for form inputs, including support for date validation and custom patterns.
 
