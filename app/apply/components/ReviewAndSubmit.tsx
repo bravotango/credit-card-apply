@@ -9,9 +9,7 @@ const ReviewAndSubmit = () => {
   const [state] = useState(payload);
 
   const getStepByWizardStepTitle = (title: WizardStepTitle) => {
-    const theStep = wizard.steps.find((step) => {
-      return step.title === title;
-    });
+    const theStep = wizard.steps.find((step) => step.title === title);
     return theStep;
   };
 
@@ -26,6 +24,7 @@ const ReviewAndSubmit = () => {
       ),
     }));
   };
+
   const card = (title: WizardStepTitle) => {
     const step = getStepByWizardStepTitle(title);
     const stateCssClass =
@@ -37,9 +36,7 @@ const ReviewAndSubmit = () => {
           {step.title}
         </span>
       </div>
-    ) : (
-      <></>
-    );
+    ) : null;
   };
 
   return (
