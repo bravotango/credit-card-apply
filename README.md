@@ -1,6 +1,7 @@
 # Credit Card Apply Wizard
 
-
+<center><img src='./public/getStarted.png' />
+</center>
 
 ## Description
   
@@ -8,23 +9,40 @@
 
 This application comes with built-in HTML5 validation for form inputs, including support for date validation and custom patterns.
 
-## Highlights
+### Mobile View
+
+<center><img src='./public/legalNameMobile.png' width='50%' /></center>
+
+### Larger Screen View
+<center><img src='./public/legalNameDesktop.png' />
+</center>
+
   
-- <strong>Responsive Design: </strong>Utilizes breakpoints for responsiveness, ensuring elements adapt to different screens. Navigation buttons stay fixed.
+## Application Features
 
-- <strong>Navigation Animations: </strong> Experience moving between steps using "Back" and "Forward" buttons.
-
-- <strong>Make it Personable: </strong>Utilizes the customers name when walking them thru the application process.
-
-- <strong>Date of Birth Input: </strong>Defaults to today's date 18 years ago for convenience.
-
-- <strong>Validation: </strong>Client-side messages prompt for incomplete or incorrect inputs.
-
-- <strong>Progress Indicator: </strong>Keep track of progress through the application process.
-
-- <strong>strings.json: </strong>By storing all strings in a single JSON file, it becomes easier to manage and update text throughout the application. Developers can make changes to the wording without needing to search through the codebase.
-  - <strong>Localization and Internationalization: </strong>Maintaining strings in a separate file facilitates the process of localization and internationalization. Translators can work directly with the strings.json file to provide translations for different languages, enhancing accessibility and user experience.
+- **Responsive Design:** Utilizes breakpoints for screen adaptability. Navigation buttons remain fixed for ease of use.
   
+- **Navigation Animations:** Seamless transition between steps using "Back" and "Forward" buttons.
+  
+- **Personalization:** Incorporates the customer's name for a tailored experience during the application process.
+  
+- **Date of Birth Input:** Conveniently defaults to today's date 18 years ago.
+  
+- **Validation:** Provides client-side prompts for incomplete or incorrect inputs.
+  
+- **Progress Indicator:** Tracks progress through the application process.
+  
+- **strings.json:** Centralizes all strings in a single JSON file, simplifying management and updates.
+  
+- **Localization and Internationalization:** Facilitates translation and localization efforts, enhancing accessibility and user experience.
+  
+## Future Enhancements
+
+- **Combined Buttons:** Streamline user interaction by merging the "validate" and "forward" buttons.
+- **Close Modal Icon:** Add a close icon ('x') to each step and confirm closure with a modal.
+- **Animations:** Implement animations for successful actions and smoother step transitions.
+- **Step Indicator Styling:** Enhance step indicator CSS to visually represent different states (error, info, success).
+
 ## License
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
@@ -43,7 +61,7 @@ This project is licensed under the Apache License 2.0. You are free to use, modi
   Repository email: 
   <a href="mailto:brian.tracy@btgraphix.com">brian.tracy@btgraphix.com</a>
 
-  ## NextJs
+## NextJs
 <details>
 
 <summary>Server-Side Rendering (SSR) with Next.js</summary>
