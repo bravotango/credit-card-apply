@@ -62,12 +62,14 @@ const Wizard: React.FC<WizardProps> = ({
     >
       <div>
         <div>
-          <button
-            onClick={goBack}
-            disabled={stepOrder.indexOf(currentStep) === 0}
-          >
-            <FaArrowLeft /> Back
-          </button>
+          {
+            <button
+              onClick={goBack}
+              disabled={stepOrder.indexOf(currentStep) === 0}
+            >
+              <FaArrowLeft /> Back
+            </button>
+          }
         </div>
         <div>{components[currentStep]}</div>
         <div>

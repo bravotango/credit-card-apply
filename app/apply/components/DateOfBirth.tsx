@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import strings from '../../strings.json';
 import { useGlobalContext } from '@/app/Context/store';
 import { StepState, WizardStepTitle } from '@/app/models';
@@ -8,6 +8,7 @@ import { stringReplace } from '@/app/utils';
 const DateOfBirth = () => {
   const { setPayload, setWizard, payload } = useGlobalContext();
   const [dateOfBirth, setDateOfBirth] = useState(payload.dateOfBirth);
+  const [age18Date, setAge18Date] = useState<string>('');
 
   const handleOnSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,6 +25,24 @@ const DateOfBirth = () => {
           : step
       ),
     }));
+  };
+
+  useEffect(() => {
+    const today = new Date();
+    const eighteenYearsAgo = new Date(
+      today.getFullYear() - 18,
+      today.getMonth(),
+      today.getDate()
+    );
+    const formattedDate = formatDate(eighteenYearsAgo);
+    setAge18Date(formattedDate);
+  }, []);
+
+  const formatDate = (date: Date) => {
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    const year = date.getFullYear();
+    return `${year}-${month}-${day}`;
   };
 
   return (
@@ -44,6 +63,7 @@ const DateOfBirth = () => {
               required
               title={strings.DateOfBirth.Validation.Dob}
               value={dateOfBirth}
+              max={age18Date}
               onChange={(e) => setDateOfBirth(e.target.value)}
             />
           </label>

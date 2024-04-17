@@ -10,16 +10,20 @@ This application comes with built-in HTML5 validation for form inputs, including
 
 ## Highlights
   
-- <strong>Navigation: </strong>Use the "Back" and "Forward" buttons to navigate between different steps in the credit card application process.
+- <strong>Responsive Design: </strong>Utilizes breakpoints for responsiveness, ensuring elements adapt to different screens. Navigation buttons stay fixed.
 
-- <strong>Input Data: </strong>Fill out the required information and provide necessary details as prompted on each step of the wizard.
+- <strong>Navigation Animations: </strong> Experience moving between steps using "Back" and "Forward" buttons.
 
-- <strong>Validation: </strong>The wizard provides validation messages for incomplete or incorrect inputs.
+- <strong>Make it Personable: </strong>Use the customers name when walking them thru the application process.
 
-- <strong>Progress Indicator: </strong>Keep track of progress through the application process displayed at the bottom of the wizard.
+- <strong>Date of Birth Input: </strong>Defaults to today's date 18 years ago for convenience.
+
+- <strong>Validation: </strong>Client-side messages prompt for incomplete or incorrect inputs.
+
+- <strong>Progress Indicator: </strong>Keep track of progress through the application process.
 
 - <strong>strings.json: </strong>By storing all strings in a single JSON file, it becomes easier to manage and update text throughout the application. Developers can make changes to the wording without needing to search through the codebase.
-  - <strong>Localization and Internationalization: </strong> Maintaining strings in a separate file facilitates the process of localization and internationalization. Translators can work directly with the strings.json file to provide translations for different languages, enhancing accessibility and user experience.
+  - <strong>Localization and Internationalization: </strong>Maintaining strings in a separate file facilitates the process of localization and internationalization. Translators can work directly with the strings.json file to provide translations for different languages, enhancing accessibility and user experience.
   
 ## License
 
@@ -37,7 +41,7 @@ This project is licensed under the Apache License 2.0. You are free to use, modi
   [https://github.com/bravotango](https://github.com/bravotango)
 
   Repository email: 
-  <a href="mailto:seattleriot@hotmail.com">seattleriot@hotmail.com</a>
+  <a href="mailto:brian.tracy@btgraphix.com">brian.tracy@btgraphix.com</a>
 
   ## NextJs
 <details>
