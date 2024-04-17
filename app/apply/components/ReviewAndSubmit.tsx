@@ -9,7 +9,9 @@ const ReviewAndSubmit = () => {
   const [state] = useState(payload);
 
   const getStepByWizardStepTitle = (title: WizardStepTitle) => {
-    const theStep = wizard.steps.find((step) => step.title === title);
+    const theStep = wizard.steps.find((step) => {
+      return step.title === title;
+    });
     return theStep;
   };
 
@@ -25,31 +27,58 @@ const ReviewAndSubmit = () => {
     }));
   };
 
-  const card = (title: WizardStepTitle) => {
-    const step = getStepByWizardStepTitle(title);
-    const stateCssClass =
-      step?.state === StepState.Complete ? 'success' : 'error';
-    return step ? (
-      <div className={`card ${stateCssClass}`}>
-        <span className='heading'>
-          <FaCheckCircle className='icon' />
-          {step.title}
-        </span>
-      </div>
-    ) : null;
-  };
-
   return (
     <div className='stack'>
       <main className='review'>
-        <h1>{strings.ReviewAndSubmit.Heading}</h1>
+        <h1>You are ready to qualify.</h1>
         <h2>Please review your information.</h2>
         <div className='cards'>
-          {card(WizardStepTitle.LegalName)}
-          {card(WizardStepTitle.DateOfBirth)}
-          {card(WizardStepTitle.Address)}
+          <div className='card'>
+            <p>
+              <span className='heading'>
+                <FaCheckCircle className='icon' />
+              </span>
+              <span className='keyValue'>
+                <span>{strings.ReviewAndSubmit.Label.FirstName}</span>
+                <span>{state.legalName.firstName}</span>
+                {state.legalName.middleInitial && (
+                  <span>
+                    {strings.ReviewAndSubmit.Label.MI}
+                    <span>{state.legalName.middleInitial}</span>
+                  </span>
+                )}
+                <span>{strings.ReviewAndSubmit.Label.LastName}</span>
+                <span>{state.legalName.lastName}</span>
+              </span>
+            </p>
+          </div>
+
+          <div className='card'>
+            <p>
+              <span className='heading'>
+                <FaCheckCircle className='icon' />
+              </span>
+              <span className='keyValue'>
+                <span>{strings.DateOfBirth.Label.Dob}</span>
+                <span>{state.dateOfBirth}</span>
+              </span>
+            </p>
+          </div>
+
+          <div className='card'>
+            <p>
+              <span className='heading'>
+                <FaCheckCircle className='icon' />
+              </span>
+              <span className='keyValue'>
+                <span>{strings.Address.Label.ResidentialAddress}</span>
+                <span>{state.address}</span>
+              </span>
+            </p>
+          </div>
+
           <form onSubmit={handleOnSubmit}>
-            <button type='submit'>{strings.Shared.Button.Submit}</button>
+            <button type='submit'>{strings.Shared.Button.Apply}</button>
           </form>
         </div>
       </main>

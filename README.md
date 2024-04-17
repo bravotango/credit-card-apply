@@ -14,7 +14,7 @@ This application comes with built-in HTML5 validation for form inputs, including
 
 - <strong>Navigation Animations: </strong> Experience moving between steps using "Back" and "Forward" buttons.
 
-- <strong>Make it Personable: </strong>Use the customers name when walking them thru the application process.
+- <strong>Make it Personable: </strong>Utilizes the customers name when walking them thru the application process.
 
 - <strong>Date of Birth Input: </strong>Defaults to today's date 18 years ago for convenience.
 

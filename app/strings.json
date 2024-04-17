@@ -2,7 +2,8 @@
   "Shared": {
     "Button": {
       "GoBack": "Back",
-      "Submit": "Validate"
+      "Submit": "Validate",
+      "Apply": "Apply"
     }
   },
   "GetStarted": {
@@ -29,7 +30,7 @@
     "Heading": "Nice to meet you, {name}.",
     "SubHeading": "What's your birthday?",
     "Label": {
-      "Dob": "Date of Birth"
+      "Dob": "Date of Birth: "
     },
     "Validation": {
       "Dob": "We need your date of birth to verify your identity."
@@ -39,14 +40,22 @@
     "Heading": "Now let's validate your address. ",
     "SubHeading": "Let us know where you live so we can verify your identity.",
     "Label": {
-      "ResidentialAddress": "Residential address (P.O. Box is not valid)",
-      "AppSuite": "Apt/suite (if applicable)"
+      "ResidentialAddress": "Residential address: ",
+      "AppSuite": "Apt/suite (if applicable): "
     },
     "Validation": {
       "ResidentialAddress": "Please enter your address"
     }
   },
   "ReviewAndSubmit": {
-    "Heading": "You are ready to qualify."
+    "Heading": "You are ready to qualify.",
+    "Label": {
+      "FirstName": "First name:",
+      "LastName": "Last name:",
+      "MI": "MI"
+    }
+  },
+  "Congratulations": {
+    "Heading": "Congratulations"
   }
 }

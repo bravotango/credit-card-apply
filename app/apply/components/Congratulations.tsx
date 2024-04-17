@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import strings from '../../strings.json';
 
 const Congratulations = () => {
   useEffect(() => {
@@ -29,7 +30,7 @@ const Congratulations = () => {
   return (
     <div className='stack'>
       <main className='review'>
-        <h1>Congratulations</h1>
+        <h1>{strings.Congratulations.Heading}</h1>
         <div className='lightTheMatch'>
           <div className='before'></div>
           <div className='after'></div>
