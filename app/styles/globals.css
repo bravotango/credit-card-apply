@@ -37,7 +37,7 @@ body img {
 }
 @keyframes bang {
   to {
-    box-shadow: 479px -1235px hsl(131, 100%, 50%), 325px -781px hsl(36, 100%, 50%), -636px -110px hsl(284, 100%, 50%), 310px -739px hsl(59, 100%, 50%), 642px -951px hsl(349, 100%, 50%), 401px -814px hsl(128, 100%, 50%), 590px -932px hsl(157, 100%, 50%), -648px -945px hsl(359, 100%, 50%), 253px 70px hsl(75, 100%, 50%), -394px -268px hsl(305, 100%, 50%), 715px -153px hsl(346, 100%, 50%);
+    box-shadow: 249px -589px hsl(225, 100%, 50%), -185px -1169px hsl(26, 100%, 50%), -314px -223px hsl(43, 100%, 50%), 319px -291px hsl(100, 100%, 50%), 444px -738px hsl(326, 100%, 50%), -346px -983px hsl(71, 100%, 50%), -347px -818px hsl(29, 100%, 50%), -507px -1071px hsl(68, 100%, 50%), 39px -631px hsl(264, 100%, 50%), 53px -828px hsl(97, 100%, 50%), 479px -480px hsl(178, 100%, 50%);
   }
 }
 @keyframes gravity {
@@ -139,17 +139,20 @@ button {
   margin: 10px auto;
   text-align: center;
   max-width: 200px;
+  min-width: 100px;
   padding: 10px;
   background-color: #000;
   color: #fff;
   height: 40px;
   cursor: pointer;
 }
-.button.disabled,
-button.disabled {
+.button.disabled, .button[disabled],
+button.disabled,
+button[disabled] {
   background-color: grey;
   color: #000;
-  cursor: not-allowed;
+  cursor: none;
+  opacity: 30%;
 }
 
 .container {

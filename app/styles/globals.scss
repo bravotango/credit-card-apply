@@ -67,15 +67,18 @@ button {
   margin: $px-large auto;
   text-align: center;
   max-width: $button-width;
+  min-width: $button-width-sm;
   padding: $px-large;
   background-color: $primary-bg-color;
   color: $primary-text-color;
   height: $button-height;
   cursor: pointer;
-  &.disabled {
+  &.disabled,
+  &[disabled] {
     background-color: $disabled;
     color: $primary-bg-color;
-    cursor: not-allowed;
+    cursor: none;
+    opacity: 30%;
   }
 }
 .container {

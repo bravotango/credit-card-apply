@@ -54,7 +54,7 @@ const Wizard: React.FC<WizardProps> = ({
   const onAnimationEnd = (): void => {
     setTransitionDirection(TransitionDirection.None);
   };
-
+  const isFirstStep = stepOrder.indexOf(currentStep) === 0;
   return (
     <div
       className={`wizard-container ${transitionDirection}`}
@@ -63,10 +63,7 @@ const Wizard: React.FC<WizardProps> = ({
       <div>
         <div>
           {
-            <button
-              onClick={goBack}
-              disabled={stepOrder.indexOf(currentStep) === 0}
-            >
+            <button onClick={goBack} disabled={isFirstStep}>
               <FaArrowLeft /> Back
             </button>
           }
