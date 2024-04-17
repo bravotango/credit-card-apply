@@ -20,10 +20,6 @@ body img {
   box-sizing: border-box;
 }
 
-body {
-  overflow: hidden;
-}
-
 .lightTheMatch > .before,
 .lightTheMatch > .after {
   display: flex;
@@ -41,7 +37,7 @@ body {
 }
 @keyframes bang {
   to {
-    box-shadow: 387px -713px hsl(284, 100%, 50%), -48px 152px hsl(135, 100%, 50%), 658px -1109px hsl(223, 100%, 50%), -408px -372px hsl(221, 100%, 50%), -688px -1052px hsl(40, 100%, 50%), -454px -12px hsl(98, 100%, 50%), -122px -167px hsl(8, 100%, 50%), 323px -266px hsl(214, 100%, 50%), 445px -116px hsl(334, 100%, 50%), 362px 113px hsl(135, 100%, 50%), 714px -862px hsl(185, 100%, 50%);
+    box-shadow: 67px -995px hsl(107, 100%, 50%), 619px -366px hsl(334, 100%, 50%), 201px -794px hsl(325, 100%, 50%), 604px -231px hsl(188, 100%, 50%), -691px 60px hsl(346, 100%, 50%), -488px -293px hsl(172, 100%, 50%), -272px -994px hsl(129, 100%, 50%), 709px -511px hsl(240, 100%, 50%), 701px -446px hsl(343, 100%, 50%), -199px -1052px hsl(164, 100%, 50%), 108px -1023px hsl(90, 100%, 50%);
   }
 }
 @keyframes gravity {
