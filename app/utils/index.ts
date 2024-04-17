@@ -1,5 +1,3 @@
-import { WizardStepTitle } from '../models';
-
 export const stringReplace = (
   textString: string,
   replacements: Record<string, string>
