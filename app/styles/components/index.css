@@ -42,7 +42,6 @@ form.legalName .button {
 }
 
 .cards {
-  border: 1px solid inherit;
   padding: 4px;
 }
 .cards .card .heading {
@@ -75,4 +74,7 @@ form.legalName .button {
   .address {
     width: 400px;
   }
+}
+main {
+  min-height: 360px;
 }/*# sourceMappingURL=index.css.map */

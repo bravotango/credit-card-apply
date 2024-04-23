@@ -55,6 +55,7 @@ const Wizard: React.FC<WizardProps> = ({
     setTransitionDirection(TransitionDirection.None);
   };
   const isFirstStep = stepOrder.indexOf(currentStep) === 0;
+  const isLastStep = stepOrder.indexOf(currentStep) === stepOrder.length - 1;
   return (
     <div
       className={`wizard-container ${transitionDirection}`}
@@ -70,12 +71,14 @@ const Wizard: React.FC<WizardProps> = ({
         </div>
         <div>{components[currentStep]}</div>
         <div>
-          <button
-            onClick={goForward}
-            disabled={stepOrder.indexOf(currentStep) === stepOrder.length - 1}
-          >
-            Forward <FaArrowRight />
-          </button>
+          {
+            <button
+              onClick={goForward}
+              disabled={stepOrder.indexOf(currentStep) === stepOrder.length - 1}
+            >
+              Forward <FaArrowRight />
+            </button>
+          }
         </div>
       </div>
       <div className='step-indicator'>

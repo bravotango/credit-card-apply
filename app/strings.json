@@ -49,10 +49,11 @@
   },
   "ReviewAndSubmit": {
     "Heading": "You are ready to qualify.",
+    "SubHeading": "Please review your information.",
     "Label": {
       "FirstName": "First name:",
       "LastName": "Last name:",
-      "MI": "MI"
+      "MI": "MI:"
     }
   },
   "Congratulations": {

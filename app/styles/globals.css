@@ -27,7 +27,7 @@ body img {
   width: 6px;
   height: 6px;
   border-radius: 0%;
-  box-shadow: 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff;
+  box-shadow: 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff;
   animation: 1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards;
 }
 
@@ -37,7 +37,7 @@ body img {
 }
 @keyframes bang {
   to {
-    box-shadow: 249px -589px hsl(225, 100%, 50%), -185px -1169px hsl(26, 100%, 50%), -314px -223px hsl(43, 100%, 50%), 319px -291px hsl(100, 100%, 50%), 444px -738px hsl(326, 100%, 50%), -346px -983px hsl(71, 100%, 50%), -347px -818px hsl(29, 100%, 50%), -507px -1071px hsl(68, 100%, 50%), 39px -631px hsl(264, 100%, 50%), 53px -828px hsl(97, 100%, 50%), 479px -480px hsl(178, 100%, 50%);
+    box-shadow: 258px -109px hsl(312, 100%, 50%), -499px -312px hsl(329, 100%, 50%), 30px -145px hsl(349, 100%, 50%), 410px -574px hsl(14, 100%, 50%), 716px -841px hsl(131, 100%, 50%), 312px -568px hsl(253, 100%, 50%), 364px -277px hsl(296, 100%, 50%), -573px -945px hsl(333, 100%, 50%), -306px 156px hsl(202, 100%, 50%), 133px -453px hsl(127, 100%, 50%), -503px -1199px hsl(34, 100%, 50%), 245px -311px hsl(10, 100%, 50%), -533px -741px hsl(16, 100%, 50%), 54px -825px hsl(320, 100%, 50%), 594px -38px hsl(229, 100%, 50%), -191px -95px hsl(315, 100%, 50%), 624px -1154px hsl(81, 100%, 50%), -569px -703px hsl(40, 100%, 50%), 439px -843px hsl(102, 100%, 50%), -328px -266px hsl(111, 100%, 50%), -75px -93px hsl(254, 100%, 50%), -21px 53px hsl(86, 100%, 50%), 737px -1192px hsl(196, 100%, 50%), 4px 102px hsl(327, 100%, 50%), -676px -1173px hsl(20, 100%, 50%), 195px -1025px hsl(347, 100%, 50%);
   }
 }
 @keyframes gravity {
@@ -260,7 +260,6 @@ form.legalName .button {
 }
 
 .cards {
-  border: 1px solid inherit;
   padding: 4px;
 }
 .cards .card .heading {
@@ -294,6 +293,10 @@ form.legalName .button {
     width: 400px;
   }
 }
+main {
+  min-height: 360px;
+}
+
 /* Media query styles */
 @media screen and (max-width: 800px) {
   .banner .wizard-container > div {

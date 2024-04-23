@@ -1,18 +1,24 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useGlobalContext } from '../../Context/store';
-import { StepState, WizardStepTitle } from '@/app/models';
+import { Step, StepState, WizardStepTitle } from '@/app/models';
 import strings from '../../strings.json';
 import { FaCheckCircle } from 'react-icons/fa';
 
 const ReviewAndSubmit = () => {
   const { payload, setWizard, wizard } = useGlobalContext();
-  const [state] = useState(payload);
+  const [state, setState] = useState(payload);
+  const [step, setStep] = useState<Step | null>(null);
+
+  useEffect(() => {
+    const stepData = getStepByWizardStepTitle(WizardStepTitle.LegalName);
+    setStep(stepData);
+  }, [wizard]); // Ensure useEffect runs when wizard changes
 
   const getStepByWizardStepTitle = (title: WizardStepTitle) => {
-    const theStep = wizard.steps.find((step) => {
-      return step.title === title;
-    });
-    return theStep;
+    console.log(`title ${title}`);
+    const foundStep = wizard.steps.find((step) => step.title === title) || null;
+    console.log(`found step: ${foundStep}`);
+    return foundStep;
   };
 
   const handleOnSubmit = (e: React.FormEvent) => {
@@ -29,29 +35,27 @@ const ReviewAndSubmit = () => {
 
   return (
     <div className='stack'>
-      <main className='review'>
-        <h1>You are ready to qualify.</h1>
-        <h2>Please review your information.</h2>
+      <main>
+        <h1>{strings.ReviewAndSubmit.Heading}</h1>
+        <h2>{strings.ReviewAndSubmit.SubHeading}</h2>
         <div className='cards'>
-          <div className='card'>
-            <p>
+          {step && (
+            <div className='card'>
               <span className='heading'>
                 <FaCheckCircle className='icon' />
               </span>
               <span className='keyValue'>
                 <span>{strings.ReviewAndSubmit.Label.FirstName}</span>
                 <span>{state.legalName.firstName}</span>
-                {state.legalName.middleInitial && (
-                  <span>
-                    {strings.ReviewAndSubmit.Label.MI}
-                    <span>{state.legalName.middleInitial}</span>
-                  </span>
-                )}
+
+                <span>{strings.ReviewAndSubmit.Label.MI}</span>
+                <span>{state.legalName.middleInitial}</span>
+
                 <span>{strings.ReviewAndSubmit.Label.LastName}</span>
                 <span>{state.legalName.lastName}</span>
               </span>
-            </p>
-          </div>
+            </div>
+          )}
 
           <div className='card'>
             <p>
