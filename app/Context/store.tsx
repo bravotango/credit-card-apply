@@ -44,31 +44,31 @@ export const GlobalContextProvider: React.FC<GlobalContextProviderProps> = ({
   };
   const initWizard: Wizard = {
     steps: [
-      // {
-      //   state: StepState.NotStarted,
-      //   title: WizardStepTitle.LegalName,
-      //   isFirstStep: true,
-      // },
-      // {
-      //   state: StepState.NotStarted,
-      //   title: WizardStepTitle.DateOfBirth,
-      //   isFirstStep: false,
-      // },
-      // {
-      //   state: StepState.NotStarted,
-      //   title: WizardStepTitle.Address,
-      //   isFirstStep: false,
-      // },
-      // {
-      //   state: StepState.NotStarted,
-      //   title: WizardStepTitle.ReviewAndSubmit,
-      //   isFirstStep: false,
-      // },
-      // {
-      //   state: StepState.NotStarted,
-      //   title: WizardStepTitle.Congratulations,
-      //   isFirstStep: false,
-      // },
+      {
+        state: StepState.NotStarted,
+        title: WizardStepTitle.LegalName,
+        isFirstStep: true,
+      },
+      {
+        state: StepState.NotStarted,
+        title: WizardStepTitle.DateOfBirth,
+        isFirstStep: false,
+      },
+      {
+        state: StepState.NotStarted,
+        title: WizardStepTitle.Address,
+        isFirstStep: false,
+      },
+      {
+        state: StepState.NotStarted,
+        title: WizardStepTitle.ReviewAndSubmit,
+        isFirstStep: false,
+      },
+      {
+        state: StepState.NotStarted,
+        title: WizardStepTitle.Congratulations,
+        isFirstStep: false,
+      },
     ],
     isComplete: false,
     isCloseModalOpen: false,

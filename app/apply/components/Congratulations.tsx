@@ -29,7 +29,7 @@ const Congratulations = () => {
 
   return (
     <div className='stack'>
-      <main className='review'>
+      <main>
         <h1>{strings.Congratulations.Heading}</h1>
         <div className='lightTheMatch'>
           <div className='before'></div>
