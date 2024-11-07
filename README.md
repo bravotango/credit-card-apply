@@ -50,8 +50,7 @@ This application comes with built-in HTML5 validation for form inputs, including
 This project is licensed under the Apache License 2.0. **While the license allows usage, modification, and distribution, explicit consent is required for any use of this code outside the terms specified in the license. Unauthorized copying or usage is prohibited.**
 
 For full license details, see the [LICENSE](https://spdx.org/licenses/Apache-2.0.html) file.
-![Consent Required](https://img.shields.io/badge/Use-Requires%20Consent-red)
-![No Unauthorized Use](https://img.shields.io/badge/No-Unauthorized%20Use-critical)
+
 
 ## Installation
   
