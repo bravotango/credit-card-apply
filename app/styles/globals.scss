@@ -1,6 +1,17 @@
 @import './reset';
 @import './variables';
 @import './firework';
+
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 900
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&display=swap');
+body {
+  font-family: 'Catamaran', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
 .logo {
   margin: $px-large 0;
   padding: 0 $px-small;
@@ -14,7 +25,6 @@
   justify-content: space-between;
   align-items: center;
 }
-
 .banner {
   background-color: $primary-bg-color;
   color: $primary-text-color;

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&display=swap");
 html,
 body {
   padding: 0;
@@ -37,7 +38,7 @@ body img {
 }
 @keyframes bang {
   to {
-    box-shadow: 258px -109px hsl(312, 100%, 50%), -499px -312px hsl(329, 100%, 50%), 30px -145px hsl(349, 100%, 50%), 410px -574px hsl(14, 100%, 50%), 716px -841px hsl(131, 100%, 50%), 312px -568px hsl(253, 100%, 50%), 364px -277px hsl(296, 100%, 50%), -573px -945px hsl(333, 100%, 50%), -306px 156px hsl(202, 100%, 50%), 133px -453px hsl(127, 100%, 50%), -503px -1199px hsl(34, 100%, 50%), 245px -311px hsl(10, 100%, 50%), -533px -741px hsl(16, 100%, 50%), 54px -825px hsl(320, 100%, 50%), 594px -38px hsl(229, 100%, 50%), -191px -95px hsl(315, 100%, 50%), 624px -1154px hsl(81, 100%, 50%), -569px -703px hsl(40, 100%, 50%), 439px -843px hsl(102, 100%, 50%), -328px -266px hsl(111, 100%, 50%), -75px -93px hsl(254, 100%, 50%), -21px 53px hsl(86, 100%, 50%), 737px -1192px hsl(196, 100%, 50%), 4px 102px hsl(327, 100%, 50%), -676px -1173px hsl(20, 100%, 50%), 195px -1025px hsl(347, 100%, 50%);
+    box-shadow: 278px -672px hsl(194, 100%, 50%), -150px -639px hsl(226, 100%, 50%), -377px -1090px hsl(2, 100%, 50%), -106px -938px hsl(108, 100%, 50%), 465px -1027px hsl(94, 100%, 50%), -423px 237px hsl(308, 100%, 50%), -364px -645px hsl(116, 100%, 50%), -628px -272px hsl(129, 100%, 50%), 687px -979px hsl(165, 100%, 50%), 634px -1217px hsl(29, 100%, 50%), 610px -86px hsl(309, 100%, 50%), -610px -1114px hsl(82, 100%, 50%), -548px -204px hsl(232, 100%, 50%), 508px 116px hsl(51, 100%, 50%), 573px -1073px hsl(111, 100%, 50%), -123px -896px hsl(194, 100%, 50%), -732px -925px hsl(17, 100%, 50%), -134px -1249px hsl(351, 100%, 50%), 16px -497px hsl(208, 100%, 50%), 72px -811px hsl(35, 100%, 50%), 457px -778px hsl(280, 100%, 50%), 279px -531px hsl(190, 100%, 50%), -729px -365px hsl(10, 100%, 50%), 14px -317px hsl(209, 100%, 50%), 563px -512px hsl(105, 100%, 50%), -146px -375px hsl(178, 100%, 50%);
   }
 }
 @keyframes gravity {
@@ -72,6 +73,13 @@ body img {
     margin-left: 80%;
   }
 }
+body {
+  font-family: "Catamaran", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
 .logo {
   margin: 10px 0;
   padding: 0 4px;
