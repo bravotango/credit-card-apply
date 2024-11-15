@@ -15,7 +15,7 @@ export default function RootLayout({
   function DisplayLogo() {
     const searchParams = useSearchParams();
     const showLogo = searchParams.get('noLogo') ?? true; // default value is "1"
-    return showLogo ? (
+    return !!showLogo ? (
       <div className='container'>
         <Image src={Logo} alt='company logo' height='25' className='logo' />
       </div>
@@ -30,7 +30,9 @@ export default function RootLayout({
         <meta name='viewport' content='width=device-width, initial-scale=1' />
       </Head>
       <body suppressHydrationWarning={true}>
-        <Suspense>{DisplayLogo()}</Suspense>
+        <Suspense>
+          <DisplayLogo />
+        </Suspense>
         <GlobalContextProvider>{children}</GlobalContextProvider>
       </body>
     </html>
