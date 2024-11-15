@@ -4,7 +4,7 @@ import strings from './strings.json';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 
-const page = () => {
+const Page = () => {
   const searchParams = useSearchParams();
 
   // Check if the parameters exist in the query string
@@ -36,4 +36,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
