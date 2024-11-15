@@ -12,7 +12,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  function displayLogo() {
+  function DisplayLogo() {
     const searchParams = useSearchParams();
     const showLogo = searchParams.get('noLogo') ?? true; // default value is "1"
     return showLogo ? (
@@ -30,7 +30,7 @@ export default function RootLayout({
         <meta name='viewport' content='width=device-width, initial-scale=1' />
       </Head>
       <body suppressHydrationWarning={true}>
-        <Suspense>{displayLogo()}</Suspense>
+        <Suspense>{DisplayLogo()}</Suspense>
         <GlobalContextProvider>{children}</GlobalContextProvider>
       </body>
     </html>
