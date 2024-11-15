@@ -1,7 +1,11 @@
 'use client';
 import React, { useState } from 'react';
+import dynamic from 'next/dynamic';
 import Wizard from '../components/wizard';
-import GlobalState from '../components/displayStore';
+//import GlobalState from '../components/displayStore';
+const GlobalState = dynamic(() => import('../components/displayStore'), {
+  ssr: false,
+});
 import {
   Address,
   Congratulations,
