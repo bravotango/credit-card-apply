@@ -6,6 +6,7 @@ import './styles/globals.css';
 import Logo from '../public/nordstrom-logo.svg';
 import Head from 'next/head';
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 
 const catamaran = Catamaran({ subsets: ['latin'], weight: '600' });
 
@@ -24,12 +25,21 @@ export default function RootLayout({
       </Head>
       <body className={catamaran.className} suppressHydrationWarning={true}>
         <div className='container'>
-          {showLogo && (
-            <Image src={Logo} alt='company logo' height='25' className='logo' />
-          )}
+          <Suspense fallback={null}>
+            <LogoComponent />
+          </Suspense>
         </div>
         <GlobalContextProvider>{children}</GlobalContextProvider>
       </body>
     </html>
   );
+}
+
+function LogoComponent() {
+  const searchParams = useSearchParams();
+  const showLogo = searchParams.get('logo') !== '0';
+
+  return showLogo ? (
+    <Image src={Logo} alt='company logo' height='25' className='logo' />
+  ) : null;
 }
