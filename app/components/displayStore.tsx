@@ -1,6 +1,6 @@
+'use client';
 import React from 'react';
 import { useGlobalContext } from '../Context/store';
-import { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 
 const DisplayStore = () => {
@@ -10,7 +10,7 @@ const DisplayStore = () => {
   const showSteps = searchParams.get('noSteps') ?? true;
 
   return (
-    <Suspense>
+    <>
       {showPayload && (
         <code className='code-container'>
           Payload:{JSON.stringify(payload, null, 2)}
@@ -21,7 +21,7 @@ const DisplayStore = () => {
           Wizard:{JSON.stringify(wizard, null, 2)}
         </code>
       )}
-    </Suspense>
+    </>
   );
 };
 
