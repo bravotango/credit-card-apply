@@ -22,7 +22,7 @@ const PageContent = () => {
     .join('&');
 
   return (
-    <main className='container stack'>
+    <main className='container stack white-background'>
       <h1>{strings.GetStarted.Heading}</h1>
       <h2>{strings.GetStarted.SubHeading}</h2>
       <Link
